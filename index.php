@@ -8,6 +8,7 @@ require('controller/frontend.php');
 
 //lorsque la page s'affiche on essaie une liste de consditions 
 try {
+    //FRONTEND
     //On vérifie qu'il existe une variable  'action'
     if (isset($_GET['action'])) {
         //si elle contient listPosts 
