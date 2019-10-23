@@ -58,10 +58,37 @@ try {
             //le controller envoie adminView (la liste de toutes les publications)
             admin();
         }
+       elseif ($_GET['action'] == 'chapter') {
+            //on vérifie qu'il existe un id et qu'il est supérieur à Zéro
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                //le controller envoie post()
+                chapter();
+            }
+
+
+            //si l'id = 0 ou et négatif on affiche l'erreur 
+            else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
+        }
 
         elseif ($_GET['action'] == 'register') {
             //le controller envoie adminView (la liste de toutes les publications)
         register();        }
+
+          elseif ($_GET['action'] == 'addChapter') {
+            //on vérifie qu'il existe un id et qu'il est supérieur à Zéro
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                //le controller envoie post()
+                chapter();
+            }
+
+
+            //si l'id = 0 ou et négatif on affiche l'erreur 
+            else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
+        }
 
         elseif ($_GET['action'] == 'addChapter') {
             //on vérifie qu'il existe un id et qu'il est supérieur à Zéro

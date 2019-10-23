@@ -53,7 +53,7 @@
                 <div class="row text-center d-flex justify-content-center">
                     <div class="col-md-12 ">
                         <a href="">A propos</a>  
-                        <a>Contact</a>  
+                        <a href="mailto:J-Forteroche@Caramail.fr">Contact</a>  
                         <a href="MentionsLegales.php">Mentions légales</a>
                     </div>
                 </div>

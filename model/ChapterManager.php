@@ -15,9 +15,10 @@ class ChapterManager extends Manager
     public function postChapter($id, $title, $content)
     {
         $db = $this->dbConnect();
-        $content = $db->prepare('INSERT INTO content(id, content, creation_date) VALUES(?, ?, ?, NOW())');
-        $affectedLinesChapter = $content->execute(array($id, $id, $content));
+        $content = $db->prepare('INSERT INTO content(id, title, content, creation_date) VALUES(?, ?, ?, NOW())');
+        $affectedLinesChapter = $content->execute(array($id, $title, $content));
 
         return $affectedLinesChapter;
     }
+    
 }

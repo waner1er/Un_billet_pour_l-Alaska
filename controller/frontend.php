@@ -52,17 +52,26 @@ function register()
 
     require 'view/frontend/registerView.php';
 }
+function chapter()
+{
+    $postManager = new PostManager();
+    $commentManager = new CommentManager();
 
-function addchapter($postId, $title, $content)
+    $post = $postManager->getPost($_GET['id']);
+    $comments = $commentManager->getComments($_GET['id']);
+    require('view/admin/chapterView.php');
+}
+
+function addChapter($Id, $title, $content)
 {
     $addChapter = new ChapterManager();
 
-    $chapter = $addChapter->postChapter($postId, $title, $content);
+    $affectedLinesChapter = $addChapter->postChapter($id, $title, $content);
 
-    if ($chapter === false) {
+    if ($affectedLinesChapter === false) {
         throw new Exception('Impossible d\'ajouter le chapitre !');
     }
     else {
-        header('Location: index.php?action=post&id=' . $postId);
+        header('Location: index.php?action=post&id=' . $id);
     }
 }

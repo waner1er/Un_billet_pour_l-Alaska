@@ -2,13 +2,24 @@
 
 <?php ob_start(); ?>
 
-<form action="index.php?action=admin&amp;id=<?= $post['id'] ?>" method="post">
+<p><a href="index.php">Retour à la liste des billets</a></p>
+
+<div id="chapters" class="alert-light">
+    <h3>
+        <?= htmlspecialchars($post['title']) ?>
+        <em>le <?= $post['creation_date_fr'] ?></em>
+    </h3>
+    
+    <p>
+        <?= nl2br(htmlspecialchars($post['content'])) ?>
+    </p>
+</div>
+
+<form action="index.php?action=#&amp;id=<?= $post['id'] ?>" method="post">
     <div>
-        <label for="title">Titre</label><br />
-        <input type="text" id="title" name="title" />
+        <label for="#">Modifier</label><br />
     </div>
-    <div>
-        <label for="content">Contenu</label><br />
+
         
 <textarea id="mytextarea" name="content" ></textarea>
     </div>
