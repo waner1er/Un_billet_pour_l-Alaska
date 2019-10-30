@@ -42,7 +42,6 @@
 while ($comment = $comments->fetch())
 {
 ?>
-    
     <div class="card border-info">
         <h5 class="text-info">
             <strong>
@@ -53,9 +52,12 @@ while ($comment = $comments->fetch())
         <p>
             <?= ($comment['comment']) ?><br>
         </p>
+        <a href="index.php?action=editComment">Modifier</a>
             
         
     </div>
+    
+
 <?php
 
 }

@@ -21,18 +21,5 @@ class PostManager extends Manager
 
         return $post;
     }
-    //
-   
 
-    //repetition de getPosts mais oranisé en ordre par id
-    public function getPostsAdmin()
-    {
-        $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM posts ORDER BY id');
-
-        return $req;
-    }
-
-
-    }
-
+}

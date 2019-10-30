@@ -3,7 +3,6 @@
 // Chargement des classes
 require_once 'model/postManager.php';
 require_once 'model/CommentManager.php';
-require_once 'model/ChapterManager.php';
 
 function listPosts()
 {
@@ -37,41 +36,17 @@ function addComment($postId, $author, $comment)
     }
 }
 
-function admin()
+    function updateComment($postId, $author, $comment)
+
 {
-    $admin = new PostManager();
-    $posts = $admin->getPostsAdmin(); 
+    $modifCommentManager = new CommentManager();
 
-    require 'view/admin/adminView.php';
-}
+    $affectedLines = $commentManager->editComment($postId, $author, $comment);
 
-function register()
-{
-    $register = new PostManager();
-    $posts = $register->getPostsAdmin(); 
-
-    require 'view/frontend/registerView.php';
-}
-function chapter()
-{
-    $postManager = new PostManager();
-    $commentManager = new CommentManager();
-
-    $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
-    require('view/admin/chapterView.php');
-}
-
-function addChapter($Id, $title, $content)
-{
-    $addChapter = new ChapterManager();
-
-    $affectedLinesChapter = $addChapter->postChapter($id, $title, $content);
-
-    if ($affectedLinesChapter === false) {
-        throw new Exception('Impossible d\'ajouter le chapitre !');
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location: index.php?action=post&id=' . $id);
+        header('Location: index.php?action=Post&id=' . $postId);
     }
 }

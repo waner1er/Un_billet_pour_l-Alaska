@@ -6,7 +6,7 @@ ini_set("display_errors", 1);
 //appel du controller
 require('controller/frontend.php');
 
-//lorsque la page s'affiche on essaie une liste de consditions 
+//lorsque la page s'affiche on essaie une liste de conditions 
 try {
     //FRONTEND
     //On vérifie qu'il existe une variable  'action'
@@ -53,63 +53,9 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
-
-        //si elle contient 'admin' 
-        elseif ($_GET['action'] == 'admin') {
-            //le controller envoie adminView (la liste de toutes les publications)
-            admin();
+        elseif ($_GET['action'] == 'editComment'){
+           updateComment();
         }
-       elseif ($_GET['action'] == 'chapter') {
-            //on vérifie qu'il existe un id et qu'il est supérieur à Zéro
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                //le controller envoie post()
-                chapter();
-            }
-
-
-            //si l'id = 0 ou et négatif on affiche l'erreur 
-            else {
-                throw new Exception('Aucun identifiant de billet envoyé');
-            }
-        }
-
-        elseif ($_GET['action'] == 'register') {
-            //le controller envoie adminView (la liste de toutes les publications)
-        register();        }
-
-          elseif ($_GET['action'] == 'addChapter') {
-            //on vérifie qu'il existe un id et qu'il est supérieur à Zéro
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                //le controller envoie post()
-                chapter();
-            }
-
-
-            //si l'id = 0 ou et négatif on affiche l'erreur 
-            else {
-                throw new Exception('Aucun identifiant de billet envoyé');
-            }
-        }
-
-        elseif ($_GET['action'] == 'addChapter') {
-            //on vérifie qu'il existe un id et qu'il est supérieur à Zéro
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                //si les 2 champs sont remplis
-                if (!empty($_POST['title']) && !empty($_POST['content'])) {
-                    //le controller envoie 'addChapter' 
-                    addChapter($_GET['id'], $_POST['title'], $_POST['content']);
-                }
-                else {
-                    //sinon : Erreur
-                    throw new Exception('Tous les champs ne sont pas remplis !');
-                }
-            }
-            else {
-                //si l'id = 0 ou et négatif on affiche l'erreur 
-                throw new Exception('Aucun identifiant ');
-            }
-        }
-
 
     }
 
