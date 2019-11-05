@@ -9,5 +9,7 @@ class UserManager extends Manager {
 
         return $post;
     }
+
+    
 }
 

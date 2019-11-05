@@ -34,7 +34,7 @@
 <textarea id="mytextarea" name="comment" ></textarea>
     </div>
     <div>
-        <input type="submit" />
+        <input style="margin: 12px auto;" type="submit" />
     </div>
 </form>
 

@@ -5445,7 +5445,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   padding: 2rem 1rem;
   margin: 1rem 0;
   background-color: transparent;
-  border-radius: 35px;
+  border-radius: 555px 25px 15px 25px/25px 5px 35px 555px;;
   height:450px;
   display: flex;
   flex-direction: column;
