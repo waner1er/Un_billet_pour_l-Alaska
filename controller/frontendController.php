@@ -2,7 +2,8 @@
 
 // Chargement des classes
 require_once 'model/postManager.php';
-require_once 'model/CommentManager.php';
+require_once 'model/commentManager.php';
+require_once 'model/loginManager.php';
 
 function listPosts()
 {
@@ -48,5 +49,34 @@ function addComment($postId, $author, $comment)
     }
     else {
         header('Location: index.php?action=Post&id=' . $postId);
+    }
+}
+    
+    function login()
+{
+    require('view/frontend/loginView.php');
+}
+function connect($username, $password)
+{
+    $userManager = new UserManager();
+
+    $user = $userManager->getUser($username);
+    
+    //$user = getUser($username);
+
+    if($user === false) {
+        throw new Exception("L'utilisateur n'existe pas.");
+        var_dump($username);
+    }
+
+    $isPasswordValid = password_verify($password, $user["password"]);
+
+    if($isPasswordValid) {
+        $_SESSION['username'] = $user['username'];
+
+        require('view/backend/adminView.php');
+    }
+    else {
+        throw new Exception("La combinaison nom d'utilisateur / mot de passe n'est pas bonne.");
     }
 }

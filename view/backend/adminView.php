@@ -1,6 +1,11 @@
 <?php $title = 'ADMIN'; ?>
 
 <?php ob_start(); ?>
+<div id="disconnect" class="row">
+  <div  class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+    <a  href="index.php?action=disconnect">Se déconnecter</a>
+  </div>
+</div>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -12,29 +17,18 @@
     </tr>
   </thead>
 <?php
-while ($data = $posts->fetch())
-{
+
 ?>
 <tbody>
     <tr class="table-active">
-      <th scope="row"><?= htmlspecialchars($data['id']) ?></th>
-      <td><?= $data['creation_date_fr'] ?></td>
-      <td><?= $data['title'] ?></td>
-      <td><?= htmlspecialchars($data['content']) ?></td>
-      <td><a href="index.php?action=chapter&amp;id=<?= $data['id'] ?>">modifier</a></td>
+      <th scope="row"><?='creation_date_fr'?></th>
+      <td><?= 'creation date' ?></td>
+      <td><?= 'title' ?></td>
+      <td><?='content' ?></td>
+      <td><a href="index.php?action=chapter&amp;id=<?= 'id' ?>">modifier</a></td>
 
     </tr>
-
-
-    
-
-
-<?php
-}
-$posts->closeCursor();
-?>
-
- </tbody>
+</tbody>
 </table>
 
 

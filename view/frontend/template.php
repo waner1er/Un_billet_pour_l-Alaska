@@ -32,7 +32,7 @@
         <a class="nav-link" href="#">Jean Forteroche </a>
       </li>
       <li class="nav-item">
-        <a href="#"class="nav-link">Espace Administration</a>
+        <a href="index.php?action=admin"class="nav-link">Espace Administration</a>
       </li>
 
     </ul>

@@ -105,3 +105,13 @@ color:#000;
   
 }
 
+#login{
+      display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+#disconnect{
+  display:flex;
+  justify-content:flex-end;
+  text-align: center;
+}
