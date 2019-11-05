@@ -6,11 +6,6 @@
     <a  href="index.php?action=disconnect">Se déconnecter</a>
   </div>
 </div>
-<div class="row">
-  <div id="welcome"class="col-lg-12">
-      <h3 style="color:#000">Bienvenue <span style="color:#0dbfbc"><?= $username ?> </span></h3>
-  </div>
-</div>
 <table class="table table-hover">
   <thead>
     <tr>
