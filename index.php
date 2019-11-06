@@ -79,7 +79,7 @@ function loginAction() {
 
 function adminAction() {
     if(isset($_SESSION['username'])) {
-        admin();       
+        Listchapters();       
     }
     else {
         login();
