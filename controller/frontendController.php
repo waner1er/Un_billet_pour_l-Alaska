@@ -4,6 +4,8 @@
 require_once 'model/postManager.php';
 require_once 'model/commentManager.php';
 require_once 'model/loginManager.php';
+require_once 'model/chapterManager.php';
+
 
 function listPosts()
 {
@@ -54,15 +56,19 @@ function addComment($postId, $author, $comment)
     
     function login()
 {
+    $login = new UserManager();
     require('view/frontend/loginView.php');
 }
+
+
+
+
 function connect($username, $password)
 {
     $userManager = new UserManager();
 
     $user = $userManager->getUser($username);
     
-    //$user = getUser($username);
 
     if($user === false) {
         throw new Exception("L'utilisateur n'existe pas.");
@@ -74,7 +80,7 @@ function connect($username, $password)
     if($isPasswordValid) {
         $_SESSION['username'] = $user['username'];
 
-        require('view/backend/adminView.php');
+        header('Location: index.php?action=admin&id=');
     }
     else {
         throw new Exception("La combinaison nom d'utilisateur / mot de passe n'est pas bonne.");

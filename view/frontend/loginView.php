@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-
 <div  class="container">
   <div id="login" class="row">
     <form class="col-lg-8"action="index.php?action=login" method="post">

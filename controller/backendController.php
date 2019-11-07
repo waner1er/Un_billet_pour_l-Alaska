@@ -28,6 +28,20 @@ function chapter()
 {
 	$chapterManager = new ChapterManager(); // Création d'un objet
 
-    $post = $chapterManager->getchapter($_GET['id']);
+    $chapter = $chapterManager->getchapter($_GET['id']);
     require('view/backend/adminView.php');
+}
+
+function addChapter($id, $title, $content)
+{
+    $chapterManager = new ChapterManager();
+
+    $affectedLines = $chapterManager->postChapter($id, $title, $content);
+
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter le chapitre !');
+    }
+    else {
+        header('Location: index.php?action=admin');
+    }
 }

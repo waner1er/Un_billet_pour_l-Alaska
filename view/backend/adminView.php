@@ -6,41 +6,39 @@
     <a  href="index.php?action=disconnect">Se déconnecter</a>
   </div>
 </div>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">n°</th>
-      <th scope="col">Date de publication</th>
-      <th scope="col">Titre du chapitre</th>
-      <th scope="col">Contenu du chapitre</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
+
 <?php
-
+while ($data = $chapters->fetch())
+{
 ?>
-<tbody>
-    <tr class="table-active">
-      <th scope="row"><?='creation_date_fr'?></th>
-      <td><?= 'creation date' ?></td>
-      <td><?= 'title' ?></td>
-      <td><?='content' ?></td>
-      <td><a href="index.php?action=chapter&amp;id=<?= 'id' ?>">modifier</a></td>
-
-    </tr>
-</tbody>
-</table>
-
+    <div class="ad minMenu">
+      <div class="card text-white bg-info mb-3 chapterEdit">
+        <div class="card-header">Chapitre <?= $data['id'] ?></div>
+        <div class="card-body">
+          <p class="card-title"><?= $data['creation_date_fr'] ?></p>
+          <p class="card-text"><?=  $data['title']  ?></p>
+          <p class="card-text"><?=  $data['content']  ?></p>
+        </div>
+      </div>
+    </div>
 
 
-<form action="#" method="post">
+
+<?php
+}
+$chapters->closeCursor();
+?>
+
+
+
+<form action="index.php?action=addChapter" method="post">
   <h2 style="text-align: center;">Ajouter un chapitre</h2>
     <div>
         <label for="title">Titre du Chapitre</label><br />
-        <input type="text" id="author" name="author" />
+        <input type="text" id="author" name="title" />
     </div>
     <div>
-        <label for="comment">Commentaire</label><br />
+        <label for="id"></label><br />
         
 <textarea id="mytextarea" name="content" ></textarea>
     </div>

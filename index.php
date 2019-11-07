@@ -15,6 +15,9 @@ try{
             case 'post': 
                 postAction(); 
                 break;
+            case 'addChapter': 
+                addChapterAction(); 
+                break;
             case 'addComment': 
                 addCommentAction(); 
                 break;
@@ -51,7 +54,7 @@ function postAction() {
 }
 
 function addCommentAction(){
-    if (isset($_GET['id']) && $_GET['id'] > 0) {
+    /*if (isset($_GET['id']) && $_GET['id'] > 0) {
                 //si les 2 champs sont remplis
                 if (!empty($_POST['author']) && !empty($_POST['comment'])) {
                     //le controller envoie 'addcomment' 
@@ -65,7 +68,21 @@ function addCommentAction(){
             else {
                 //si l'id = 0 ou et négatif on affiche l'erreur 
                 throw new Exception('Aucun identifiant de billet envoyé');
-            }
+            }*/
+            var_dump($_GET['id']);
+}
+function addChapterAction(){
+                //si les 2 champs sont remplis
+                if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                    //le controller envoie 'addcomment' 
+                    addChapter($_GET['id'], $_POST['title'], $_POST['content']);
+                }
+                else {
+                    //sinon : Erreur
+                    throw new Exception('Tous les champs ne sont pas remplis !');
+                }
+         
+            var_dump($_POST['content']);
 }
 
 function loginAction() {
@@ -79,7 +96,7 @@ function loginAction() {
 
 function adminAction() {
     if(isset($_SESSION['username'])) {
-        Listchapters();       
+        listchapters();       
     }
     else {
         login();
