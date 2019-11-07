@@ -80,7 +80,7 @@ function connect($username, $password)
     if($isPasswordValid) {
         $_SESSION['username'] = $user['username'];
 
-        header('Location: index.php?action=admin&id=');
+        header('Location: index.php?action=admin');
     }
     else {
         throw new Exception("La combinaison nom d'utilisateur / mot de passe n'est pas bonne.");

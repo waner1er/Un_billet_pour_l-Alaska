@@ -1,4 +1,3 @@
-*--------------------------------------------------------------*/
 /*--------------------------------------------------------------*/
 /*CSS perso */
 /*--------------------------------------------------------------*/
@@ -23,12 +22,18 @@
 #chapters h3{
 color:#000;
 }
+#chapter_main:hover{
+background-color: lightgrey;
+}
 #chapter_main{
   border: 2px solid grey;
   margin:20px 0 ;
   padding: 10px;
+  overflow: hidden;
+  height: 250px;
 
 }
+
 .news em{
   color: green;
   text-transform:lowercase;
@@ -121,8 +126,15 @@ width:100%;
   display:flex;
 }
 
-.chapterEdit{
-height:200px;
-
+.chapterEdit p:nth-child(4){
+height:100px;
   overflow: scroll;
+}
+
+#titleChap h2::first-letter, #chapter_main::first-letter {
+font-family: 'Clicker Script', cursive;
+  font-size:2.5em;
+  padding-right:0.2em;
+  float:left;
+  color:#2BA2C6;
 }

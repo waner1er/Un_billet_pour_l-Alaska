@@ -10,13 +10,13 @@
 
 <p><a href="index.php">Retour à la liste des billets</a></p>
 
-<div id="chapters" class="alert-light">
-    <h3>
-        <?=($post['title']) ?>
+<div id="titleChap" class="alert-light">
+    <h2>
+        <?=($post['title']) ?><br>
         <em>le <?= $post['creation_date_fr'] ?></em>
-    </h3>
+    </h2>
     
-    <p>
+    <p >
         <?= nl2br($post['content']) ?>
     </p>
 </div>

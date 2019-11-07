@@ -1,16 +1,32 @@
-<?php $title = htmlspecialchars($post['title']); ?>
+<?php $title = htmlspecialchars($chapter['title']); ?>
 
 <?php ob_start(); ?>
 
-<p><a href="index.php?action=adminView">Retour à la page d'administration</a></p>
+        
 
-<form action="index.php?action=postChapter&amp;id=<?= $post['id'] ?>" method="post">
+<div id="chapters" class="alert-light">
+    <h3>
+        <?= htmlspecialchars($chapter['title']) ?>
+        <em>le <?= $chapter['creation_date_fr'] ?></em>
+    </h3>
+    
+    <p>
+        <?= nl2br($chapter['content']) ?>
+    </p>
+</div>
+
+</div>
+    <div>
+<div  class="btn btn-info col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+            <a  href="index.php?action=admin">Retour à la liste des articles </a>
+        </div>
+<hr>
+<form action="index.php?action=updateChapter&amp;id=<?= $chapter['id'] ?>" method="post">
     <div>
         <label for="title">Titre du Chapitre</label><br />
-        <input type="text" id="author" name="author" />
-    </div>
-    <div>
-        <label for="comment">Commentaire</label><br />
+        <input type="text" id="title" name="title" />
+    
+        <label for="comment">Chapitre</label><br />
         
 <textarea id="mytextarea" name="content" ></textarea>
     </div>

@@ -16,8 +16,9 @@
 <?php
 while ($data = $posts->fetch())
 {
-?>
-    <div id="chapter_main" class="alert-light">
+?><a  href="index.php?action=post&amp;id=<?= $data['id']?>">
+    <div id="chapterBckgrnd">
+      <div id="chapter_main" class="alert-light">
         <h1 style="color: #000">
             <?= ($data['title']) ?> 
             <em>le <?= $data['creation_date_fr'] ?></em>
@@ -25,7 +26,8 @@ while ($data = $posts->fetch())
 
         <p><?= nl2br($data['content']) ?>        </p>
 
-        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="btn btn-info btn-lg">Commentaires</a>
+    </div>
+            </a>
     </div>
 
     

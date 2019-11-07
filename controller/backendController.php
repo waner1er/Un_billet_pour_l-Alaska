@@ -29,7 +29,8 @@ function chapter()
 	$chapterManager = new ChapterManager(); // Création d'un objet
 
     $chapter = $chapterManager->getchapter($_GET['id']);
-    require('view/backend/adminView.php');
+
+    require('view/backend/postChapter.php');
 }
 
 function addChapter($id, $title, $content)
@@ -42,6 +43,22 @@ function addChapter($id, $title, $content)
         throw new Exception('Impossible d\'ajouter le chapitre !');
     }
     else {
-        header('Location: index.php?action=admin');
+        header('Location: index?action=admin');
     }
 }
+
+function updateChapter($id, $title, $content)
+
+{
+    $modifchapterManager = new ChapterManager();
+
+    $affectedLines = $ChapterManager->editChapter($id, $title, $content);
+
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter le commentaire !');
+    }
+    else {
+        header('Location: index?action=admin');
+    }
+}
+    

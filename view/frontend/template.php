@@ -10,6 +10,8 @@
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="public/css/style.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="../public/images/icon.jpg"/>
+  <link href="https://fonts.googleapis.com/css?family=Clicker+Script&display=swap" rel="stylesheet">
+
 
 
   
