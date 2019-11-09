@@ -30,12 +30,5 @@ class ChapterManager extends Manager
         return $affectedLines;
     }
 
-    public function editChapter($id, $title, $content)
-    {
-       $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE posts SET title = ?, content = ?, creation_date = NOW() WHERE id = ?');
-        $newChapter = $req->execute(array($content, $id));
-   
-        return $newChapter;
-    }
+    
 }

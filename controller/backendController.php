@@ -46,19 +46,4 @@ function addChapter($id, $title, $content)
         header('Location: index?action=admin');
     }
 }
-
-function updateChapter($id, $title, $content)
-
-{
-    $modifchapterManager = new ChapterManager();
-
-    $affectedLines = $ChapterManager->editChapter($id, $title, $content);
-
-    if ($affectedLines === false) {
-        throw new Exception('Impossible d\'ajouter le commentaire !');
-    }
-    else {
-        header('Location: index?action=admin');
-    }
-}
     

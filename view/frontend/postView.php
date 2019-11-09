@@ -20,15 +20,24 @@
         <?= nl2br($post['content']) ?>
     </p>
 </div>
-
-<h2>Commentaires</h2>
-
-<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+<div>
+  
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Ajouter un commentaire
+  </button>
+</div>
+<div class="collapse" id="collapseExample">
+<div class="alert alert-dismissible alert-secondary">
+  <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+</div>
+  <div class="">
+  <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>
         <label for="author">Auteur</label><br />
         <input type="text" id="author" name="author" />
     </div>
     <div>
+    
         <label for="comment">Commentaire</label><br />
         
 <textarea id="mytextarea" name="comment" ></textarea>
@@ -36,14 +45,18 @@
     <div>
         <input type="submit" />
     </div>
-</form>
+</form>  </div>
+</div>
+<h2>Commentaires</h2>
+
+
 
 <?php
 while ($comment = $comments->fetch())
 {
 ?>
-    <div class="card border-info">
-        <h5 class="text-info">
+<div class="alert alert-dismissible alert-secondary">
+<h5 class="text-info">
             <strong>
                 <?= htmlspecialchars($comment['author']) ?>
             </strong>
@@ -51,17 +64,18 @@ while ($comment = $comments->fetch())
         </h5>
         <p>
             <?= ($comment['comment']) ?><br>
-        </p>
-        <a href="index.php?action=editComment">Modifier</a>
-            
-        
-    </div>
+        </p>        
+</div>
+    
     
 
 <?php
 
 }
+$comments->closeCursor();
+
 ?>
+
 
 <?php $content = ob_get_clean(); ?>
 

@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+
 <div  class="container">
   <div id="login" class="row">
     <form class="col-lg-8"action="index.php?action=login" method="post">
@@ -16,7 +17,6 @@
     </form>
   </div>
 </div>
-
 
 <?php $content = ob_get_clean(); ?>
 

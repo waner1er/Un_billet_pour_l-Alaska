@@ -18,12 +18,6 @@ try{
             case 'addChapter': 
                 addChapterAction(); 
                 break;
-            case 'postChapter': 
-                postChapterAction(); 
-                break;
-            case 'updateChapter': 
-                updateChapterAction(); 
-                break;
             case 'addComment': 
                 addCommentAction(); 
                 break;
@@ -90,9 +84,6 @@ function addCommentAction(){
          
 }
 
-function postChapterAction(){
-    chapter();
-    }
 
 function loginAction() {
     if(isset($_POST['username']) && isset($_POST['password'])) {

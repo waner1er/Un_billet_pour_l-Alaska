@@ -127,14 +127,25 @@ width:100%;
 }
 
 .chapterEdit p:nth-child(4){
-height:100px;
+  height:100px;
   overflow: scroll;
 }
 
 #titleChap h2::first-letter, #chapter_main::first-letter {
-font-family: 'Clicker Script', cursive;
+  font-family: "Cabin Sketch", cursive;
   font-size:2.5em;
+  text-transform: uppercase;
   padding-right:0.2em;
   float:left;
-  color:#2BA2C6;
+  color:#000;
+}
+
+#menuAdmin{
+  border:1px solid black;
+  margin:auto;
+  display: flex;
+  justify-content: space-around;
+}
+#menuAdmin a{
+  color:#fff;
 }
