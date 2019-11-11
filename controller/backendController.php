@@ -15,9 +15,13 @@ function disconnect() {
     session_destroy();
     require ('view/frontend/loginView.php');
 }
-function listChapters(){
+
+function adminIndex(){
 	$chapterManager = new ChapterManager(); // Création d'un objet
     $chapters = $chapterManager->getChapters(); // Appel d'une fonction de cet objet
+
+    $commentManager = new CommentManager();
+    $comments = $commentManager->getComments();
 
     require('view/backend/adminView.php');
 }

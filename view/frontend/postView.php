@@ -57,14 +57,15 @@ while ($comment = $comments->fetch())
 ?>
 <div class="alert alert-dismissible alert-secondary">
 <h5 class="text-info">
-            <strong>
-                <?= htmlspecialchars($comment['author']) ?>
-            </strong>
-            le <?= $comment['comment_date_fr'] ?>
-        </h5>
-        <p>
-            <?= ($comment['comment']) ?><br>
-        </p>        
+      <strong>
+          <?= htmlspecialchars($comment['author']) ?>
+      </strong>
+      le <?= $comment['comment_date_fr'] ?>
+</h5>
+
+<p>
+    <?= ($comment['comment']) ?><br>
+</p>        
 </div>
     
     

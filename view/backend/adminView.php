@@ -8,18 +8,21 @@
 <!--MENU-->
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="#home">Administration</a>
+    <a class="nav-link active" data-toggle="tab" href="#home">Rédiger un nouveau chapitre</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#chapters">Le chapitres</a>
+    <a class="nav-link" data-toggle="tab" href="#chapters">Les chapitres</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#comments">Modération des commentaires</a>
+    <a class="nav-link" data-toggle="tab" href="#comments">Les commentaires</a>
   </li>
+
   
 </ul>
 
 <!--Accueil-->
+
+
 <div id="myTabContent" class="tab-content">
     <div class="tab-pane fade active show" id="home">
     <div class="container">
@@ -42,6 +45,7 @@
     </form>
   </div>
 </div>
+
 <!------------>
 
 <!--Les chapitres-->
@@ -71,7 +75,7 @@
         </div>
 
         <div class="col-lg-2">
-            <a href="index.php?action=postChapter&amp;id=<?= $data['id'] ?>" class="btn btn-info btn-lg">Modifier</a>
+            <a href="#" id="popup" class="btn btn-info btn-lg">Modifier</a>
         </div>
     </div>
     <hr>
@@ -81,19 +85,53 @@
     }
     $chapters->closeCursor();
     ?>
-
+</div>
  
+<!--Les commentaires-->
+ <div class="tab-pane fade" id="comments">
+ <h2>Liste des commentaires </h2>
+ <table class="table">
+   <thead>
+     <tr>
+       <th>Chapitre</th>
+       <th>Commentaire</th>
+       <th></th>
+  </trait>
+   </thead>
+   <tbody>
+    <?php
 
-</div>
+    while ($data = $comments->fetch())
+    {
+    ?>
+    <tr>
+      <td>
+        <a href="index.php?action=post&id=<?= $data["post_id"] ?>" class="btn btn-link"><?= $data["title"] ?></a>  
+      </td>
+      <td>
+        <?= $data["comment"] ?></td>
+      <td>
+        <a href="#" class="btn btn-danger">Modérer</a>
+     </tr>
+    <?php
+    }
+    $comments->closeCursor();
+    ?>
+   </tbody>
+ </table>
+ </div>
 <!------------------------>
-
-<!--commenaires-->
-<div class="tab-pane fade" id="comments"> 
-      <div class="tab-pane fade active show" id="comments">
-        
+<div class="row">
+<div class="col-lg-8 chapterModifPopup">
+  <div class="card border-secondary mb-3">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h4 class="card-title">Secondary card title</h4>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
 </div>
-
-<!-------------------->
+</div>
 
 <?php $content = ob_get_clean(); ?>
 

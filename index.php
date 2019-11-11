@@ -46,7 +46,7 @@ function listPostsAction() {
 
 function postAction() {
     if (isset($_GET['id']) && $_GET['id'] > 0) {
-        post();
+        post($_GET['id']);
     }
     else {
         echo 'Erreur : aucun identifiant de billet envoyé';
@@ -96,7 +96,7 @@ function loginAction() {
 
 function adminAction() {
     if(isset($_SESSION['username'])) {
-        listchapters();       
+        adminIndex();       
     }
     else {
         login();

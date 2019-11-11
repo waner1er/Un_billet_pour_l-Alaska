@@ -149,3 +149,9 @@ width:100%;
 #menuAdmin a{
   color:#fff;
 }
+#chapterModifPopup{
+  display:none;
+  position: absolute;
+  top: 20.5rem;
+  margin:auto;
+}

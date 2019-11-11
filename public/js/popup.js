@@ -1,6 +1,6 @@
   
 $( document ).ready(function() {
-	$(".popup").click(function(){
-	    $('.editor').toggle($);
+	$("#popup").click(function(){
+	    $('.chapterModifPopup').toggle($);
 	 });
 });
