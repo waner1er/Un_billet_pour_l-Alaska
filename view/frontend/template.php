@@ -11,6 +11,8 @@
   <link href="public/css/style.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="../public/images/icon.jpg"/>
   <link href="https://fonts.googleapis.com/css?family=Clicker+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 
 
 
@@ -73,13 +75,12 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.js"></script>
   <script src="public/js/popup.js"></script>
+  <script src="public/js/test.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src='vendor/tinymce/js/tinymce/tinymce.min.js' referrerpolicy="origin"></script>
- <script>
-  tinymce.init({
-    selector: '#mytextarea'
-  });
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src='vendor/tinymce/js/tinymce/tinymce.min.js' referrerpolicy="origin"></script>
+<script src="vendor/tinymce/js/tinymce/tiny_init.js">
+  
   </script>
 
     </body>

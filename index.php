@@ -18,8 +18,14 @@ try{
             case 'addChapter': 
                 addChapterAction(); 
                 break;
+            case 'postChapter': 
+                postChapterAction(); 
+                break;
             case 'addComment': 
                 addCommentAction(); 
+                break;
+            case 'editComment': 
+                editCommentAction(); 
                 break;
             case 'login': 
                 loginAction();
@@ -70,6 +76,19 @@ function addCommentAction(){
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
+function editCommentAction(){
+    if (isset($_GET['id']) && $_GET['id'] > 0) {
+        if (!empty($_POST['comment'])) {
+            editComment($_GET['id'], $_POST['comment']);   
+           }
+        else {
+            throw new Exception('Tous les champs ne sont pas remplis !');
+        }
+    }
+    else {
+        throw new Exception('Aucun identifiant de billet envoyé');
+    }
+        }
 
     function addChapterAction(){
                 //si les 2 champs sont remplis
@@ -81,6 +100,10 @@ function addCommentAction(){
                     //sinon : Erreur
                     throw new Exception('Tous les champs ne sont pas remplis !');
                 }
+         
+}
+    function postChapterAction(){
+        chapter();
          
 }
 

@@ -21,7 +21,7 @@
             <a  href="index.php?action=admin">Retour à la liste des articles </a>
         </div>
 <hr>
-<form action="" method="post">
+<form action="index.php?action=updateChapter" method="post">
     <div>
         <label for="title">Titre du Chapitre</label>x<br />
         <input type="text" id="title" name="title" />

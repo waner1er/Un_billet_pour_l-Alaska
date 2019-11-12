@@ -39,20 +39,7 @@ function addComment($postId, $author, $comment)
     }
 }
 
-    function updateComment($postId, $author, $comment)
 
-{
-    $modifCommentManager = new CommentManager();
-
-    $affectedLines = $commentManager->editComment($postId, $author, $comment);
-
-    if ($affectedLines === false) {
-        throw new Exception('Impossible d\'ajouter le commentaire !');
-    }
-    else {
-        header('Location: index.php?action=Post&id=' . $postId);
-    }
-}
     
     function login()
 {

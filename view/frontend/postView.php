@@ -20,33 +20,31 @@
         <?= nl2br($post['content']) ?>
     </p>
 </div>
-<div>
+
   
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     Ajouter un commentaire
   </button>
 </div>
 <div class="collapse" id="collapseExample">
-<div class="alert alert-dismissible alert-secondary">
-  <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+    <div class="alert alert-dismissible alert-secondary">
+        <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+            <div>
+              <label for="author">Auteur</label><br />
+              <input type="text" id="author" name="author" />
+              </div>
+
+            <div>
+                <label for="comment">Commentaire</label><br />
+                <textarea class="mytextarea" name="comment" ></textarea>
+                </div>
+                <div>
+                <input type="submit" />
+            </div>
+        </form>  
+    </div>
 </div>
-  <div class="">
-  <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-    <div>
-        <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" />
-    </div>
-    <div>
-    
-        <label for="comment">Commentaire</label><br />
-        
-<textarea id="mytextarea" name="comment" ></textarea>
-    </div>
-    <div>
-        <input type="submit" />
-    </div>
-</form>  </div>
-</div>
+
 <h2>Commentaires</h2>
 
 
@@ -62,14 +60,15 @@ while ($comment = $comments->fetch())
       </strong>
       le <?= $comment['comment_date_fr'] ?>
 </h5>
+<div style='display:none' class="censored"><em>Ce commentaire à été signalé par l'administration
+</em></div>
 
 <p>
     <?= ($comment['comment']) ?><br>
-</p>        
-</div>
-    
-    
+</p> 
 
+
+</div>
 <?php
 
 }

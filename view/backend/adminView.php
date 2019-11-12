@@ -35,7 +35,7 @@
 
       <div>
         <label for="id"></label><br />
-        <textarea id="mytextarea" name="content" ></textarea>
+        <textarea class="mytextarea" name="content" ></textarea>
       </div>
       
       <div>
@@ -75,7 +75,29 @@
         </div>
 
         <div class="col-lg-2">
-            <a href="#" id="popup" class="btn btn-info btn-lg">Modifier</a>
+
+        <h2>Modifier un chapitre</h2>
+<div class="toggle">
+    <div class="more">
+    <form action="" method="post">
+            <div>
+              <label for="author">Auteur</label><br />
+              <input type="text" id="author" name="author" />
+              </div>
+
+            <div>
+                <label for="comment">Commentaire</label><br />
+                <textarea class="mytextarea" name="content" ></textarea>                </div>
+                <div>
+                <input type="submit" />
+            </div>
+        </form>      </div>
+    
+    <div class="less">
+        <a class="btn btn-success button-read-more button-read" href="#read">Modifier</a>
+        <a class="btn btn-danger button-read-less button-read" href="#read">Fermer</a>
+    </div>
+</div>
         </div>
     </div>
     <hr>
@@ -93,8 +115,10 @@
  <table class="table">
    <thead>
      <tr>
-       <th>Chapitre</th>
+       <th>Titre</th>
        <th>Commentaire</th>
+       <th>nombre de signalements</th>
+       <th>censuré</th>
        <th></th>
   </trait>
    </thead>
@@ -105,13 +129,19 @@
     {
     ?>
     <tr>
+
       <td>
-        <a href="index.php?action=post&id=<?= $data["post_id"] ?>" class="btn btn-link"><?= $data["title"] ?></a>  
+        <a href="index.php?action=post&id=<?= $data["post_id"] ?>" class="btn btn-info"><?= $data["title"] ?></a>  
       </td>
       <td>
         <?= $data["comment"] ?></td>
       <td>
+
+      </td>
+      <td>
+      <td>
         <a href="#" class="btn btn-danger">Modérer</a>
+        </td>
      </tr>
     <?php
     }
@@ -121,17 +151,7 @@
  </table>
  </div>
 <!------------------------>
-<div class="row">
-<div class="col-lg-8 chapterModifPopup">
-  <div class="card border-secondary mb-3">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-      <h4 class="card-title">Secondary card title</h4>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-</div>
-</div>
+
 
 <?php $content = ob_get_clean(); ?>
 
