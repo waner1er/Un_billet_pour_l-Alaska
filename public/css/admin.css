@@ -88,6 +88,7 @@
       padding-left: 300px;
     }
   }
+    
   /*----------------show sidebar button----------------*/
   #show-sidebar {
     position: fixed;
@@ -407,6 +408,22 @@
   .chiller-theme .sidebar-wrapper {
       background: #31353D;
   }
+  .mobileHeader {
+    display:none;
+    
+  }
+  
+
+  @media screen and (max-width: 767px) {
+    .chiller-theme .sidebar-wrapper {
+      display:none;
+   }
+   .mobileHeader{
+     display:flex;
+
+   }
+
+  }
   
   .chiller-theme .sidebar-wrapper .sidebar-header,
   .chiller-theme .sidebar-wrapper .sidebar-search,
@@ -478,4 +495,15 @@
   .chiller-theme .sidebar-footer>a:last-child {
       border-right: none;
   }
+  .accueilAdmin a{
+    margin : 10px auto;
+    padding: 10px;
+  }
+  .accueilAdmin{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    margin:auto;
+  }
+
   

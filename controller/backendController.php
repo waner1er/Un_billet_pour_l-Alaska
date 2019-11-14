@@ -87,14 +87,21 @@ function updateChapter($id, $title,$content)
 {
     $chapterManager = new ChapterManager();
 
-    $affectedLines = $chapterManager->postChapter($id, $title,$content);
+    $affectedLines = $chapterManager->editChapter($id, $title,$content);
 
     if ($affectedLines === false) {
-        throw new Exception('Impossible d\'ajouter le chapitre !');
+        throw new Exception('Impossible de modifier le chapitre !');
     }
     else {
-        header('Location: index?action=admin');
+        header('Location: index?action=adminChapters');
     }
 
     
+}
+function signal($id)
+{
+    $signalManager = new SignalManager();
+
+    $signal = $signalManager->getSignal($id);
+    require('view/frontend/postView.php');
 }

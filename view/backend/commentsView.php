@@ -41,7 +41,7 @@
             <td>
         <div class="custom-control custom-switch">
       <input type="checkbox" name="" value="0">
-      <label >Modérer</label>
+      <label >Modérer <br> <em>(la case cochée doit modérer le commentaire et mettre la classe <span>'comment' en span display:none et 'censored' en display:block </span> ) </em></label>
     </div>
 
         </td>

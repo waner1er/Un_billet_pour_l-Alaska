@@ -17,16 +17,38 @@
 
     </head>
       <body>
+      <ul class="mobileHeader nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link alert-success" href="index.php?action=admin">Administration</a>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Rédaction</a>
+    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+      <a class="dropdown-item" href="index.php?action=writeChapter">Rédiger un nouvel article</a>
+      <a class="dropdown-item" href="index.php?action=adminChapters">Liste des chapitres</a>
+      <a class="dropdown-item" href="index.php?action=adminComments">Liste des commentaires</a>
+    </div>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Messagerie</a>
+    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
+      <a class="dropdown-item" href="index.php?action=message">Les messages reçus</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="index.php">Retourner sur le Site</a>
+  </li>
+
+ 
+</ul>
+
       <div class="page-wrapper chiller-theme toggled">
   <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
     <i class="fas fa-bars"></i>
   </a>
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
-      <div class="sidebar-brand">
-        <div id="close-sidebar">
-        </div>
-      </div>
+      
       <div class="sidebar-header">
       <a href="index.php?action=admin">
         <div class="user-pic">
@@ -44,7 +66,7 @@
         </a>
       </div>
       <!-- sidebar-header  -->
-     
+    
       <div class="sidebar-menu">
         <ul>
           <li class="header-menu">
@@ -82,10 +104,13 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">les messages reçus</a>
+                  <a href="index.php?action=message">les messages reçus</a>
                 </li>
               </ul>
             </div>
+          </li>
+          <li>
+            <span><a href="index.php">Retourner sur le Site</a></span>
           </li>
           <div class="sidebar-footer">
       
@@ -125,7 +150,6 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.js"></script>
   <script src="public/js/popup.js"></script>
-  <script src="public/js/test.js"></script>
   <script src="public/js/admin.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

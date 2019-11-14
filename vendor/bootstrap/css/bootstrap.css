@@ -4365,6 +4365,12 @@ input[type="button"].btn-block {
   margin-bottom: -2px;
 }
 
+
+.nav-item a:hover {
+  color:#fff;
+  background:lightblue;
+}
+
 .nav-tabs .nav-link {
   border: 2px solid transparent;
   border-top-left-radius: 25px;

@@ -63,7 +63,7 @@ while ($comment = $comments->fetch())
 <div style='display:none' class="censored"><em>Ce commentaire à été signalé par l'administration
 </em></div>
 
-<p>
+<p class="comment">
     <?= ($comment['comment']) ?><br>
 </p> 
 

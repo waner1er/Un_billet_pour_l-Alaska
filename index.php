@@ -24,6 +24,9 @@ try{
             case 'postChapter': 
                 postChapterAction(); 
                 break;
+            case 'updateChapter': 
+                updateChapterAction(); 
+                break;
             case 'addComment': 
                 addCommentAction(); 
                 break;
@@ -106,11 +109,14 @@ function addCommentAction(){
          
 }
     function postChapterAction(){
-        chapter();
-         
+        chapter();      
 }
+    function updateChapterAction(){
+        //updateChapter($id,$title,$content);
+        echo "modifier le contenu de 'content' dans 'posts'<br><a href='index.php'>retour</a>";
+    }
     function signalAction(){
-    echo "on ajoute un 'signaler' dans la base";
+echo'ajouter +1 à "signaled" dans la table "comments"<br><a href="index.php">retour</a>';
 }
 
 

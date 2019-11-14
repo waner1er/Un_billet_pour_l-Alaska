@@ -77,7 +77,6 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.js"></script>
   <script src="public/js/popup.js"></script>
-  <script src="public/js/test.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src='vendor/tinymce/js/tinymce/tinymce.min.js' referrerpolicy="origin"></script>

@@ -1,4 +1,5 @@
 <?php
+require_once"model/manager.php";
 
 class MessageManager extends Manager
 {
@@ -10,6 +11,7 @@ class MessageManager extends Manager
 
         return $affectedLines;
     }
+ 
     public function getMessage($post_id, $user, $messages)
     {
         $db = $this->dbConnect();

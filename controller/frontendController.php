@@ -47,10 +47,13 @@ function addComment($postId, $author, $comment)
     require('view/frontend/loginView.php');
 }
 
+
 function message()
 {
     //$sendMessage = new MessageManager();
-    echo "c'est ici qu'on doit avoir un formulaire pour laisser un message";
+
+    require('view/backend/messageView.php');
+
 }
 
 

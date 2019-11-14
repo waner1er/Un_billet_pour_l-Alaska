@@ -8,6 +8,9 @@
         $(this).closest('.less').removeClass('active');
         $(this).closest(".less").prev().stop(true).slideUp("1000");
     });
+    jQuery('#toggleAdminMenu').click(function () {
+        $(.sidebar-content).toggle($);
+    });
 });
 
 

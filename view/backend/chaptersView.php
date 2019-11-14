@@ -25,27 +25,22 @@
 
         <div class="col-lg-12">
 
-        <h2>Modifier un chapitre</h2>
+        <h2>Modifier Ce chapitre</h2>
 <div class="toggle">
     <div class="more">
-    <form action="" method="post" >
-            <div>
-              <label for="author">Auteur</label><br />
-              <input type="text" id="author" name="author" />
-              </div>
+    <form action="index.php?action=updateChapter" method="post" >
+            
 
             <div >
-                <label for="comment">Commentaire</label><br />
+                
                 <textarea class="mytextarea" name="content" ><?=  $data['content']  ?></textarea>                </div>
                 <div>
-                <input type="submit" />
+                    <br>
+                <input class="btn btn-success"type="submit" value="Modifier" />
             </div>
         </form>      </div>
     
-    <div class="less">
-        <a class="btn btn-success button-read-more button-read" href="#read">Modifier</a>
-        <a class="btn btn-danger button-read-less button-read" href="#read">Fermer</a>
-    </div>
+    
 </div>
         </div>
     </div>
