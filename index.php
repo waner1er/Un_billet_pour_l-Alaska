@@ -24,14 +24,23 @@ try{
             case 'addComment': 
                 addCommentAction(); 
                 break;
-            case 'editComment': 
-                editCommentAction(); 
+            case 'signal': 
+                signalAction(); 
                 break;
             case 'login': 
                 loginAction();
                 break;
             case 'admin': 
                 adminAction(); 
+                break;
+            case 'writeChapter': 
+                writeChapter(); 
+                break;
+            case 'adminChapters': 
+                chaptersAction(); 
+                break;
+            case 'adminComments': 
+                adminCommentsAction(); 
                 break;
             case 'disconnect': 
                 disconnectAction(); 
@@ -76,19 +85,7 @@ function addCommentAction(){
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
-function editCommentAction(){
-    if (isset($_GET['id']) && $_GET['id'] > 0) {
-        if (!empty($_POST['comment'])) {
-            editComment($_GET['id'], $_POST['comment']);   
-           }
-        else {
-            throw new Exception('Tous les champs ne sont pas remplis !');
-        }
-    }
-    else {
-        throw new Exception('Aucun identifiant de billet envoyé');
-    }
-        }
+
 
     function addChapterAction(){
                 //si les 2 champs sont remplis
@@ -105,6 +102,9 @@ function editCommentAction(){
     function postChapterAction(){
         chapter();
          
+}
+    function signalAction(){
+    echo "on ajoute un 'signaler' dans la base";
 }
 
 
@@ -125,6 +125,32 @@ function adminAction() {
         login();
     }
 }
+function chaptersAction() {
+    if(isset($_SESSION['username'])) {
+        chaptersIndex();       
+    }
+    else {
+        login();
+    }
+}
+function writeChapterAction() {
+    if(isset($_SESSION['username'])) {
+        writeChapterIndex();       
+    }
+    else {
+        login();
+    }
+}
+function adminCommentsAction() 
+{
+    if(isset($_SESSION['username'])) {
+        adminCommentsIndex();       
+    }
+    else {
+        login();
+    }
+}
+
 
 function disconnectAction() {
     disconnect();

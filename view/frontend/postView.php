@@ -68,6 +68,11 @@ while ($comment = $comments->fetch())
 </p> 
 
 
+   
+        <a class="btn btn-danger" href="index.php?action=signal">Signaler</a> <br>(<?= ($comment['signaled']) ?>  )
+
+    </div>
+</div>
 </div>
 <?php
 

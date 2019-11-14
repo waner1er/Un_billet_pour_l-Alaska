@@ -9,6 +9,8 @@
         <title><?= $title ?></title>
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="public/css/style.css" rel="stylesheet">
+  <link href="public/css/admin.css" rel="stylesheet" /> 
+
   <link rel="shortcut icon" type="image/png" href="../public/images/icon.jpg"/>
   <link href="https://fonts.googleapis.com/css?family=Clicker+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">

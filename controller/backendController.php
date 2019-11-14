@@ -25,7 +25,40 @@ function adminIndex(){
 
     require('view/backend/adminView.php');
 }
+function writeChapter(){
+	$chapterManager = new ChapterManager(); // Création d'un objet
+    $chapters = $chapterManager->getChapters(); // Appel d'une fonction de cet objet
 
+    $commentManager = new CommentManager();
+    $comments = $commentManager->getComments();
+
+    require('view/backend/writeChapterView.php');
+}
+
+function writeChapterIndex(){
+	$chapterManager = new ChapterManager(); // Création d'un objet
+    $chapters = $chapterManager->getChapters(); // Appel d'une fonction de cet objet
+
+
+    require('view/backend/editChapterView.php');
+}
+
+function adminCommentsIndex(){
+	
+    $commentManager = new CommentManager();
+    $comments = $commentManager->getComments();
+
+    require('view/backend/commentsView.php');
+}
+
+function chaptersIndex(){
+	$chapterManager = new ChapterManager(); // Création d'un objet
+    $chapters = $chapterManager->getChapters(); // Appel d'une fonction de cet objet
+
+
+
+    require('view/backend/chaptersView.php');
+}
 
 
 function chapter()

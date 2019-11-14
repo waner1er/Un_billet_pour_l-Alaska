@@ -6,7 +6,7 @@ class CommentManager extends Manager
     public function getComments()
     {
         $db = $this->dbConnect();
-        $comments = $db->query('SELECT c.id, p.title, c.post_id, c.author, c.comment, DATE_FORMAT(c.comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comments c INNER JOIN posts p ON p.id = c.post_id ORDER BY comment_date DESC, c.post_id');
+        $comments = $db->query('SELECT c.id, p.title, c.post_id, c.author, c.comment,c.signaled, DATE_FORMAT(c.comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comments c INNER JOIN posts p ON p.id = c.post_id ORDER BY comment_date DESC, c.post_id');
 
         return $comments;
     }
@@ -14,7 +14,7 @@ class CommentManager extends Manager
     public function getCommentsByPost($postId)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC LIMIT 0, 3');
+        $comments = $db->prepare('SELECT id, author, comment,signaled, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC ');
         $comments->execute(array($postId));
 
         return $comments;
@@ -28,6 +28,6 @@ class CommentManager extends Manager
 
         return $affectedLines;
     }
-
+    
 
 }
