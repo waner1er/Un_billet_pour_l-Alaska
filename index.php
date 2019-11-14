@@ -15,6 +15,9 @@ try{
             case 'post': 
                 postAction(); 
                 break;
+            case 'message': 
+                messageAction(); 
+                break;
             case 'addChapter': 
                 addChapterAction(); 
                 break;
@@ -57,6 +60,9 @@ try{
 
 function listPostsAction() {
     listPosts();
+}
+function messageAction() {
+    message();
 }
 
 function postAction() {

@@ -4,7 +4,7 @@ require_once 'model/commentManager.php';
 require_once 'model/loginManager.php';
 require_once 'model/chapterManager.php';
 
-
+//fonctions de base 
 function admin() {
     $username = $_SESSION["username"];
 
@@ -17,11 +17,8 @@ function disconnect() {
 }
 
 function adminIndex(){
-	$chapterManager = new ChapterManager(); // Création d'un objet
-    $chapters = $chapterManager->getChapters(); // Appel d'une fonction de cet objet
-
-    $commentManager = new CommentManager();
-    $comments = $commentManager->getComments();
+	$chapterManager = new ChapterManager(); 
+    $chapters = $chapterManager->getChapters(); 
 
     require('view/backend/adminView.php');
 }
@@ -45,6 +42,9 @@ function writeChapterIndex(){
 
 function adminCommentsIndex(){
 	
+    $chapterManager = new ChapterManager(); // Création d'un objet
+    $chapters = $chapterManager->getChapters(); // Appel d'une fonction de cet objet
+
     $commentManager = new CommentManager();
     $comments = $commentManager->getComments();
 

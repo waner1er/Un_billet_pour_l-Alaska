@@ -1,4 +1,3 @@
-<?php $title = 'ADMIN'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,6 +28,7 @@
         </div>
       </div>
       <div class="sidebar-header">
+      <a href="index.php?action=admin">
         <div class="user-pic">
           <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
             alt="User picture">
@@ -41,6 +41,7 @@
           <span class="user-status">
           </span>
         </div>
+        </a>
       </div>
       <!-- sidebar-header  -->
      
@@ -97,6 +98,7 @@
   <!-- sidebar-wrapper  -->
 
   <main class="page-content">
+
   <div><?= $content ?></div>
 
 <!------------------------>
