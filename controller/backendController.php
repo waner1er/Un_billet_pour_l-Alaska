@@ -97,7 +97,7 @@ function editChapter($id,$content)
     $chapterManager = new PostManager();
 
     $affectedLines = $chapterManager->updateChapter($id,$content);
-
+   
     if ($affectedLines === false) {
         throw new Exception('Impossible de modifier le chapitre !');
     }
