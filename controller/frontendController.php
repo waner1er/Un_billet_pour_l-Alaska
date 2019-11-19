@@ -4,7 +4,7 @@
 require_once 'model/postManager.php';
 require_once 'model/commentManager.php';
 require_once 'model/loginManager.php';
-require_once 'model/chapterManager.php';
+//require_once 'model/chapterManager.php';
 
 
 function listPosts()
@@ -39,7 +39,22 @@ function addComment($postId, $author, $comment)
     }
 }
 
-
+  
+function editComment($id, $comment)
+{
+    $commentManager = new CommentManager();
+  
+    $newComment = $commentManager->updateComment($id, $comment);
+  
+    if ($newComment === false) {
+  
+        throw new Exception('Impossible de modifier le commentaire !');
+    }
+    else {
+        echo 'commentaire : ' . $_POST['comment'];
+        header('Location: index.php?action=listPosts');
+    }
+}
     
     function login()
 {
@@ -79,4 +94,14 @@ function connect($username, $password)
     else {
         throw new Exception("La combinaison nom d'utilisateur / mot de passe n'est pas bonne.");
     }
+}
+
+
+
+function signal($id)
+{
+    $signalManager = new CommentManager();
+
+    $signal = $signalManager->getSignal($id);
+    require('view/frontend/postView.php');
 }

@@ -70,16 +70,10 @@
       <div class="sidebar-menu">
         <ul>
           <li class="header-menu">
-            <span>Administration</span>
+            <h3>Administration</h3>
           </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-tachometer-alt"></i>
-              <span>Rédaction</span>
-              <span></span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
+          <li>
+          <ul>
                 <li>
                   <a href="index.php?action=writeChapter">Rédiger un nouveau Chapitre
                     <span class="badge badge-pill badge-success">+</span>
@@ -91,24 +85,10 @@
                 <li>
                   <a href="index.php?action=adminComments">Liste des commentaires</a>
                 </li>
-              </ul>
-            </div>
-          </li>
+              </ul></li>
           
          
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-globe"></i>
-              <span>Messagerie</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="index.php?action=message">les messages reçus</a>
-                </li>
-              </ul>
-            </div>
-          </li>
+        
           <li>
             <span><a href="index.php">Retourner sur le Site</a></span>
           </li>

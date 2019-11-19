@@ -21,5 +21,20 @@ class PostManager extends Manager
 
         return $post;
     }
+    public function postChapter($id, $title, $content)
+    {
+        $db = $this->dbConnect();
+        $chapter = $db->prepare('INSERT INTO posts(id, title, content, creation_date) VALUES(?, ?, ?, NOW())');
+        $affectedLines = $chapter->execute(array($id, $title, $content));
 
+        return $affectedLines;
+    }
+    public function updateChapter($id,$content)
+    {
+        $db = $this->dbConnect();
+        $chapter = $db->prepare('UPDATE posts SET content=? WHERE id=?');
+        $affectedLines = $chapter->execute(array($content,$id));
+
+        return $affectedLines;
+    }
 }

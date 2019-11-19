@@ -2,7 +2,6 @@
 require_once 'model/postManager.php';
 require_once 'model/commentManager.php';
 require_once 'model/loginManager.php';
-require_once 'model/chapterManager.php';
 
 //fonctions de base 
 function admin() {
@@ -17,14 +16,17 @@ function disconnect() {
 }
 
 function adminIndex(){
-	$chapterManager = new ChapterManager(); 
-    $chapters = $chapterManager->getChapters(); 
+	$chapterManager = new PostManager(); 
+    $chapters = $chapterManager->getPosts(); 
 
     require('view/backend/adminView.php');
 }
+function moderate(){
+    echo 'on modère le commentaire';
+}
 function writeChapter(){
-	$chapterManager = new ChapterManager(); // Création d'un objet
-    $chapters = $chapterManager->getChapters(); // Appel d'une fonction de cet objet
+	$chapterManager = new PostManager(); // Création d'un objet
+    $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
 
     $commentManager = new CommentManager();
     $comments = $commentManager->getComments();
@@ -33,8 +35,8 @@ function writeChapter(){
 }
 
 function writeChapterIndex(){
-	$chapterManager = new ChapterManager(); // Création d'un objet
-    $chapters = $chapterManager->getChapters(); // Appel d'une fonction de cet objet
+	$chapterManager = new PostManager(); // Création d'un objet
+    $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
 
 
     require('view/backend/editChapterView.php');
@@ -42,8 +44,8 @@ function writeChapterIndex(){
 
 function adminCommentsIndex(){
 	
-    $chapterManager = new ChapterManager(); // Création d'un objet
-    $chapters = $chapterManager->getChapters(); // Appel d'une fonction de cet objet
+    $chapterManager = new PostManager(); // Création d'un objet
+    $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
 
     $commentManager = new CommentManager();
     $comments = $commentManager->getComments();
@@ -52,8 +54,8 @@ function adminCommentsIndex(){
 }
 
 function chaptersIndex(){
-	$chapterManager = new ChapterManager(); // Création d'un objet
-    $chapters = $chapterManager->getChapters(); // Appel d'une fonction de cet objet
+	$chapterManager = new PostManager(); // Création d'un objet
+    $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
 
 
 
@@ -63,16 +65,23 @@ function chaptersIndex(){
 
 function chapter()
 {
-	$chapterManager = new ChapterManager(); // Création d'un objet
+	$chapterManager = new PostManager(); // Création d'un objet
 
-    $chapter = $chapterManager->getchapter($_GET['id']);
+    $chapter = $chapterManager->getPost($_GET['id']);
 
     require('view/backend/postChapter.php');
+}
+function editChapterView()
+{
+    $postManager = new PostManager();
+
+    $post = $postManager->getPost($_GET['id']);
+    require('view/backend/editChapter.php');
 }
 
 function addChapter($id, $title, $content)
 {
-    $chapterManager = new ChapterManager();
+    $chapterManager = new PostManager();
 
     $affectedLines = $chapterManager->postChapter($id, $title, $content);
 
@@ -80,14 +89,14 @@ function addChapter($id, $title, $content)
         throw new Exception('Impossible d\'ajouter le chapitre !');
     }
     else {
-        header('Location: index?action=admin');
+        header('Location: index.php?action=adminChapters');
     }
 }
-function updateChapter($id, $title,$content)
+function editChapter($id,$content)
 {
-    $chapterManager = new ChapterManager();
+    $chapterManager = new PostManager();
 
-    $affectedLines = $chapterManager->editChapter($id, $title,$content);
+    $affectedLines = $chapterManager->updateChapter($id,$content);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible de modifier le chapitre !');
@@ -95,13 +104,6 @@ function updateChapter($id, $title,$content)
     else {
         header('Location: index?action=adminChapters');
     }
-
     
 }
-function signal($id)
-{
-    $signalManager = new SignalManager();
 
-    $signal = $signalManager->getSignal($id);
-    require('view/frontend/postView.php');
-}

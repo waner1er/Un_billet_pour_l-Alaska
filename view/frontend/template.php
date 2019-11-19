@@ -34,9 +34,7 @@
   <div class="collapse navbar-collapse" id="navbarColor03">
     <ul class="navbar-nav mr-auto">
      
-      <li class="nav-item">
-        <a class="nav-link" href="index.php?action=message">Laisser moi un message !</a>
-      </li>
+      
       <li class="nav-item">
         <a href="index.php?action=admin"class="nav-link">Administration</a>
       </li>

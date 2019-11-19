@@ -4,56 +4,38 @@
 
 
  <h2>Liste des commentaires </h2>
+ <div class="row">
  <table class="table">
-   <thead>
-     <tr>
-       <th>Titre</th>
-       <th>Auteur</th>
-       <th>Commentaire</th>
-       <th>nombre de signalements</th>
-       <th>censuré</th>
-       <th></th>
-  </trait>
-   </thead>
-   <tbody>
-    <?php
-
-    while ($data = $comments->fetch())
-    {
-    ?>
+  <thead>
     <tr>
+      <th scope="col">Titre</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Commentaire</th>
+      <th scope="col">signalements</th>
+      <th scope="col">censuré ?</th>
+      <th scope="col">Modérer</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php
 
-      <td>
-        <a href="index.php?action=post&id=<?= $data["post_id"] ?>" class="btn btn-info"><?= $data["title"] ?></a>  
-      </td>
-      <td>
-        <?= $data["author"] ?>
-        </td>
-      <td>
-      <?= $data["comment"] ?></td>
-
-      </td>
-      <td>
-      <div ></div><p  class="alert-danger"><?= $data["signaled"] ?></p>
-      <td>
-
-    </td>
-            <td>
-        <div class="custom-control custom-switch">
-      <input type="checkbox" name="" value="0">
-      <label >Modérer <br> <em>(la case cochée doit modérer le commentaire et mettre la classe <span>'comment' en span display:none et 'censored' en display:block </span> ) </em></label>
-    </div>
-
-        </td>
-     </tr>
+while ($data = $comments->fetch())
+{
+?>
+    <tr>
+      <th scope="row"><a ><?= $data["title"] ?></a></th>
+      <td><?= $data["author"] ?></td>
+      <td><?= $data["comment"] ?></td>
+      <td><?= $data["nb_signalements"] ?></td>
+      <td><?=$data["nb_signalements"] ?></td>
+      <td><a class='btn btn-danger' href="index.php?action=moderate">Modérer</a></td>
+    </tr>
     <?php
     }
     $comments->closeCursor();
     ?>
-   </tbody>
- </table>
-
-
+  </tbody>
+  </table>
 
  <?php $content = ob_get_clean(); ?>
 

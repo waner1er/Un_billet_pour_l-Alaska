@@ -10,7 +10,7 @@
 
 
 <h2>Liste des chapitres</h2>
-<p>Derniers billets du blog :</p>
+<p>Derniers chapitres :</p>
 
 
 <?php

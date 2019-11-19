@@ -30,8 +30,15 @@ try{
             case 'addComment': 
                 addCommentAction(); 
                 break;
+
+            case 'editComment': 
+                editCommentAction(); 
+                break;
             case 'signal': 
                 signalAction(); 
+                break;
+            case 'moderate': 
+                moderateAction();
                 break;
             case 'login': 
                 loginAction();
@@ -44,6 +51,9 @@ try{
                 break;
             case 'adminChapters': 
                 chaptersAction(); 
+                break;
+            case 'editChapterView': 
+                editChapterAction(); 
                 break;
             case 'adminComments': 
                 adminCommentsAction(); 
@@ -94,7 +104,20 @@ function addCommentAction(){
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
-
+        
+function editCommentAction(){
+    if (isset($_GET['id']) && $_GET['id'] > 0) {
+        if (!empty($_POST['comment'])) {
+            editComment($_GET['id'], $_POST['comment']);  
+           }
+        else {
+            throw new Exception('Tous les champs ne sont pas remplis !');
+        }
+    }
+    else {
+        throw new Exception('Aucun identifiant de billet envoyé');
+    }
+}
 
     function addChapterAction(){
                 //si les 2 champs sont remplis
@@ -112,11 +135,15 @@ function addCommentAction(){
         chapter();      
 }
     function updateChapterAction(){
-        //updateChapter($id,$title,$content);
-        echo "modifier le contenu de 'content' dans 'posts'<br><a href='index.php'>retour</a>";
+            editChapter($_POST['id'],$_POST['content']);
+
+       // echo "modifier le contenu de 'content' dans 'posts'<br><a href='index.php'>retour</a>";
     }
     function signalAction(){
 echo'ajouter +1 à "signaled" dans la table "comments"<br><a href="index.php">retour</a>';
+}
+    function moderateAction(){
+moderate();
 }
 
 
@@ -148,6 +175,15 @@ function chaptersAction() {
 function writeChapterAction() {
     if(isset($_SESSION['username'])) {
         writeChapterIndex();       
+    }
+    else {
+        login();
+    }
+}
+function editChapterAction()
+{
+    if(isset($_SESSION['username'])) {
+        editChapterView();       
     }
     else {
         login();

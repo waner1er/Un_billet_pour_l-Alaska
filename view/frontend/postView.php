@@ -8,7 +8,7 @@
   <h3 class="lead">Une épopée tragique au coeur du grand froid</h3>
 </div>
 
-<p><a href="index.php">Retour à la liste des billets</a></p>
+<p><a href="index.php">Retour à la liste des chapitres</a></p>
 
 <div id="titleChap" class="alert-light">
     <h2>
@@ -22,11 +22,11 @@
 </div>
 
   
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ajouterCollapse" aria-expanded="false" aria-controls="collapseExample">
     Ajouter un commentaire
   </button>
 </div>
-<div class="collapse" id="collapseExample">
+<div class="collapse" id="ajouterCollapse">
     <div class="alert alert-dismissible alert-secondary">
         <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
             <div>
@@ -58,7 +58,7 @@ while ($comment = $comments->fetch())
       <strong>
           <?= htmlspecialchars($comment['author']) ?>
       </strong>
-      le <?= $comment['comment_date_fr'] ?>
+      le <?= $comment['comment_date_fr'] ?> 
 </h5>
 <div style='display:none' class="censored"><em>Ce commentaire à été signalé par l'administration
 </em></div>
@@ -69,10 +69,27 @@ while ($comment = $comments->fetch())
 
 
    
-        <a class="btn btn-danger" href="index.php?action=signal">Signaler</a> <br>(<?= ($comment['signaled']) ?>  )
+        <a class="btn btn-danger" href="index.php?action=signal">Signaler</a> <br>(<?= ($comment['nb_signalements']) ?>  )
 
     </div>
 </div>
+</div>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#modifierCollapse" aria-expanded="false" aria-controls="collapseExample">
+    modifier un commentaire
+  </button>
+</div>
+<div class="collapse" id="modifierCollapse">
+    <div class="alert alert-dismissible alert-secondary">
+        <form action="index.php?action=editComment&amp;id=<?= $comment['id'] ?>" method="post">
+            
+            <div>
+                <textarea class="mytextarea" name="comment" ></textarea>
+                </div>
+                <div>
+                <input type="submit" />
+            </div>
+        </form>  
+    </div>
 </div>
 <?php
 
