@@ -55,6 +55,9 @@ try{
             case 'editChapterView': 
                 editChapterAction(); 
                 break;
+            case 'eraseChapter': 
+                eraseChapterAction(); 
+                break;
             case 'adminComments': 
                 adminCommentsAction(); 
                 break;
@@ -175,6 +178,15 @@ function chaptersAction() {
 function writeChapterAction() {
     if(isset($_SESSION['username'])) {
         writeChapterIndex();       
+    }
+    else {
+        login();
+    }
+}
+function eraseChapterAction()
+{
+    if(isset($_SESSION['username'])) {
+        eraseChapter();       
     }
     else {
         login();

@@ -17,6 +17,8 @@
                     <input class="btn btn-success"type="submit" value="Modifier" />
                 </div>
     </form>
+            <a href="index.php?action=eraseChapter&amp;id=<?= $post['id'] ?>" class="btn btn-danger"/>supprimer</a>
+
 </div>
 
         

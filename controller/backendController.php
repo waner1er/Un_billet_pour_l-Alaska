@@ -96,7 +96,7 @@ function editChapter($id,$content)
 {
     $chapterManager = new PostManager();
 
-    $affectedLines = $chapterManager->updateChapter($id,$content);
+    $affectedLines = $chapterManager->updateChapter($_GET['id'],$content);
    
     if ($affectedLines === false) {
         throw new Exception('Impossible de modifier le chapitre !');
@@ -106,4 +106,11 @@ function editChapter($id,$content)
     }
     
 }
+function eraseChapter(){
+    $chapterManager = new PostManager();
+    $affectedLines = $chapterManager->deleteChapter($_GET['id']);
+    
+    header('Location: index?action=adminChapters');
+    
+    }
 

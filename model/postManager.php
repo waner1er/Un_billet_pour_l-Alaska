@@ -37,4 +37,11 @@ class PostManager extends Manager
 
         return $affectedLines;
     }
-}
+    public function deleteChapter($id){
+    $db =$this->dbConnect();
+    $chapter = $db->prepare('DELETE FROM posts   WHERE `id` = ?');
+    $affectedLines = $chapter->execute(array($id));
+
+    return $chapter;   
+     }
+    }
