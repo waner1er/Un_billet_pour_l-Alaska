@@ -7,7 +7,7 @@
 <div>
 <div class="card-header"><h2><?=  $post['title']  ?></h2><?= $post['creation_date_fr'] ?></div>
 
-    <form action="index.php?action=updateChapter" method="post" >
+    <form action="index.php?action=updateChapter&amp;id=<?=$post['id']?>" method="post" >
                 
 
                 <div >
