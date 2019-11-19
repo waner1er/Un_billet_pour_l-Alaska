@@ -36,7 +36,7 @@
 
             <div>
                 <label for="comment">Commentaire</label><br />
-                <textarea class="mytextarea" name="comment" ></textarea>
+                <textarea class="comArea" name="comment" ></textarea>
                 </div>
                 <div>
                 <input type="submit" />
@@ -74,23 +74,9 @@ while ($comment = $comments->fetch())
     </div>
 </div>
 </div>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#modifierCollapse" aria-expanded="false" aria-controls="collapseExample">
-    modifier un commentaire
-  </button>
+
 </div>
-<div class="collapse" id="modifierCollapse">
-    <div class="alert alert-dismissible alert-secondary">
-        <form action="index.php?action=editComment&amp;id=<?= $comment['id'] ?>" method="post">
-            
-            <div>
-                <textarea class="mytextarea" name="comment" ></textarea>
-                </div>
-                <div>
-                <input type="submit" />
-            </div>
-        </form>  
-    </div>
-</div>
+
 <?php
 
 }

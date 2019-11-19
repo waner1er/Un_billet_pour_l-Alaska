@@ -52,7 +52,7 @@
       <div class="sidebar-header">
       <a href="index.php?action=admin">
         <div class="user-pic">
-          <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+          <img class="img-responsive img-rounded" src="public/images/jean.jpg"
             alt="User picture">
         </div>
         <div class="user-info">

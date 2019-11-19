@@ -9,8 +9,21 @@
         $(this).closest(".less").prev().stop(true).slideUp("1000");
     });
     jQuery('#toggleAdminMenu').click(function () {
-        $(.sidebar-content).toggle($);
+        $('.sidebar-content').toggle($);
     });
+
+
+    $('#deleteConfirm').click(function(){
+    var r = confirm("Press a button!");
+    if (r == true) {
+        $('#deleteConfirm').click()
+        };
+
+    } else {
+    alert('ok');}
+    });
+    
 });
+
 
 

@@ -17,12 +17,29 @@
                     <input class="btn btn-success"type="submit" value="Modifier" />
                 </div>
     </form>
-            <a href="index.php?action=eraseChapter&amp;id=<?= $post['id'] ?>" class="btn btn-danger"/>supprimer</a>
-
+            
 </div>
 
         
+<button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Supprimer</button>
+ 
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <p>Voulez vous vraiment modifier ce chapitre ?&hellip;</p>
+</div>  
+        <div class="modal-footer">
 
+        <a href="index.php?action=eraseChapter&amp;id=<?= $post['id'] ?>" class="btn btn-danger deleteConfirm">Oui, je supprime</a>
+      <button type="button" class="btn btn-warning" data-dismiss="modal" aria-hidden="true">Non</button>
+      </div>
+
+        </button>
+    </div>
+  </div>
+</div>
 
         <?php $content = ob_get_clean(); ?>
 
