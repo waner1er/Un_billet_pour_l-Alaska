@@ -3,7 +3,6 @@
 
 <?php ob_start(); ?>
 
-<h2>Modifie le chapitre</h2>
 <div>
 <div class="card-header"><h2><?=  $post['title']  ?></h2><?= $post['creation_date_fr'] ?></div>
 

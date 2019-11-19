@@ -1,7 +1,6 @@
 tinymce.init({
 
     selector: '.mytextarea',
-
-    height : "480px"
+    height : "750px"
 
   });

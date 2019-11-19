@@ -29,12 +29,7 @@
       <a class="dropdown-item" href="index.php?action=adminComments">Liste des commentaires</a>
     </div>
   </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Messagerie</a>
-    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
-      <a class="dropdown-item" href="index.php?action=message">Les messages reçus</a>
-    </div>
-  </li>
+  
   <li class="nav-item">
     <a class="nav-link" href="index.php">Retourner sur le Site</a>
   </li>
