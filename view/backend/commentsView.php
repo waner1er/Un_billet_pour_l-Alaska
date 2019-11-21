@@ -11,7 +11,7 @@
       <th scope="col">Titre</th>
       <th scope="col">Auteur</th>
       <th scope="col">Commentaire</th>
-      <th scope="col">signalements</th>
+      <th scope="col">Nombre de signalements</th>
       <th scope="col">censuré ?</th>
       <th scope="col">Modérer</th>
     </tr>
@@ -27,9 +27,21 @@ while ($data = $comments->fetch())
       <td><?= $data["author"] ?></td>
       <td><?= $data["comment"] ?></td>
       <td><?= $data["nb_signalements"] ?></td>
-      <td><?=$data["nb_signalements"] ?></td>
-      <td><a class='btn btn-danger' href="index.php?action=moderate">Modérer</a></td>
+      <td><?=$data["censored"] ?></td>
+      <td><form action="index.php?action=moderate&amp;id=<?=$data['id']?>" method="post">
+      <input type="submit" class='btn btn-danger dispose'>
+    </form>
     </tr>
+    <ul>
+      <li scope="row"><a>Titre : <?= $data["title"] ?></a></li>
+      <li>Auteur : <?= $data["author"] ?></li>
+      <li>Commentaire : <?= $data["comment"] ?></li>
+      <li><?= $data["nb_signalements"] ?></li>
+      <li><?=$data["censored"] ?></li>
+      <li><a class='btn btn-danger' href="index.php?action=moderate&amp;id=<?=$data['id']?>">Modérer</a></li>
+</ul>
+
+    
     <?php
     }
     $comments->closeCursor();

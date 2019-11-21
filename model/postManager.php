@@ -12,11 +12,11 @@ class PostManager extends Manager
         return $req;
     }
 
-    public function getPost($postId)
+    public function getPost($id)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM posts WHERE id = ?');
-        $req->execute(array($postId));
+        $req->execute(array($id));
         $post = $req->fetch();
 
         return $post;
@@ -37,6 +37,7 @@ class PostManager extends Manager
 
         return $affectedLines;
     }
+    
     public function deleteChapter($id){
     $db =$this->dbConnect();
     $chapter = $db->prepare('DELETE FROM posts   WHERE `id` = ?');
@@ -44,4 +45,5 @@ class PostManager extends Manager
 
     return $chapter;   
      }
-    }
+
+}

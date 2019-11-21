@@ -143,10 +143,12 @@ function editCommentAction(){
        // echo "modifier le contenu de 'content' dans 'posts'<br><a href='index.php'>retour</a>";
     }
     function signalAction(){
-echo'ajouter +1 à "signaled" dans la table "comments"<br><a href="index.php">retour</a>';
-}
+        signal($_GET['id']);
+
+        }
     function moderateAction(){
-moderate();
+    moderate($_GET['id']);
+
 }
 
 

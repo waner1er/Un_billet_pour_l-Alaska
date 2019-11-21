@@ -70,7 +70,7 @@ footer{
 }
 
 body {
-  margin: 1em 5%;
+  margin: 0;
   font-family: "Neucha", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -621,8 +621,8 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: 25px;
+  margin-left: 0px;
 }
 
 .no-gutters {
@@ -2022,7 +2022,7 @@ pre code {
 .table-responsive {
   display: block;
   width: 100%;
-  overflow-x: auto;
+  overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -4343,6 +4343,7 @@ input[type="button"].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  color:lightgrey;
 }
 
 .nav-link:hover, .nav-link:focus {
@@ -4366,7 +4367,7 @@ input[type="button"].btn-block {
 
 .nav-item a:hover {
   color:#fff;
-  background:lightblue;
+
 }
 
 .nav-tabs .nav-link {
@@ -4399,7 +4400,7 @@ input[type="button"].btn-block {
 }
 
 .nav-pills .nav-link {
-  border-radius: 25px;
+ 
 }
 
 .nav-pills .nav-link.active,
@@ -5551,9 +5552,7 @@ display:none;
 }
 
 .alert-success {
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;
+  
 }
 
 .alert-success hr {

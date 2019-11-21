@@ -54,8 +54,8 @@ while ($comment = $comments->fetch())
 {
 ?>
 <div class="alert alert-dismissible alert-secondary">
-<h5 class="text-info">
-      <strong>
+<h5  class="text-info">
+      <strong >
           <?= htmlspecialchars($comment['author']) ?>
       </strong>
       le <?= $comment['comment_date_fr'] ?> 
@@ -64,12 +64,14 @@ while ($comment = $comments->fetch())
 </em></div>
 
 <p class="comment">
-    <?= ($comment['comment']) ?><br>
+<?= $comment['comment'] ?>
 </p> 
 
 
-   
-        <a class="btn btn-danger" href="index.php?action=signal">Signaler</a> <br>(<?= ($comment['nb_signalements']) ?>  )
+   <a class='btn btn-danger' href="index.php?action=signal&amp;id=<?=$comment['id']?>">Signaler</a></td>
+
+  
+   (<?= ($comment['nb_signalements']) ?>  )
 
     </div>
 </div>

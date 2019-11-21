@@ -4,7 +4,6 @@
 require_once 'model/postManager.php';
 require_once 'model/commentManager.php';
 require_once 'model/loginManager.php';
-//require_once 'model/chapterManager.php';
 
 
 function listPosts()
@@ -25,17 +24,17 @@ function post($id)
     require('view/frontend/postView.php');
 }
 
-function addComment($postId, $author, $comment)
+function addComment($id, $author, $comment)
 {
     $commentManager = new CommentManager();
 
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
+    $affectedLines = $commentManager->postComment($id, $author, $comment);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location: index.php?action=post&id=' . $postId);
+        header('Location: index.php?action=post&id=' . $id);
     }
 }
 
@@ -63,13 +62,6 @@ function editComment($id, $comment)
 }
 
 
-function message()
-{
-    //$sendMessage = new MessageManager();
-
-    require('view/backend/messageView.php');
-
-}
 
 
 function connect($username, $password)
@@ -97,11 +89,14 @@ function connect($username, $password)
 }
 
 
-
 function signal($id)
 {
-    $signalManager = new CommentManager();
-
-    $signal = $signalManager->getSignal($id);
-    require('view/frontend/postView.php');
+    $commentManager = new CommentManager();
+    $signal = $commentManager->postSignal($id);
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter le commentaire !');
+    }
+    else {
+        header('Location:index.php?action=listPosts');
+    }
 }

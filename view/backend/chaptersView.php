@@ -2,10 +2,8 @@
 <?php $title = 'Les chapitres '; ?>
 
 <?php ob_start(); ?>
-
-
-<h2>Liste des chapitres </h2>
-
+<div class="row">
+    <div class="col-sm-12"><h2 style="text-align:center;">Liste des chapitres </h2></div>
     
 
     <?php
@@ -13,16 +11,15 @@
     {
     ?>
 
+        <div class="chapterEdit row">
+            <div class="col-sm-10"><h2><?=  $data['title']  ?></h2><?= $data['creation_date_fr'] ?></div>
+            <div class="">
+                <a href="index.php?action=editChapterView&amp;id=<?= $data['id'] ?>" class="btn btn-success"/>Consulter</a>
+            </div>
+        </div>    
+    
 
-<div class="">
-    <div class="chapterEdit">
-        <div class=""><h2><?=  $data['title']  ?></h2><?= $data['creation_date_fr'] ?></div>
-    </div>
-
-    <div class="col-lg-12">
-        <a href="index.php?action=editChapterView&amp;id=<?= $data['id'] ?>" class="btn btn-success"/>Consulter</a>
-    </div>
-</div>
+    
 
 <hr>
 
@@ -30,5 +27,5 @@
     }
     ?>
 <?php $content = ob_get_clean(); ?>
-
+</div>
 <?php require('adminTemplate.php'); ?>

@@ -11,19 +11,4 @@
     jQuery('#toggleAdminMenu').click(function () {
         $('.sidebar-content').toggle($);
     });
-
-
-    $('#deleteConfirm').click(function(){
-    var r = confirm("Press a button!");
-    if (r == true) {
-        $('#deleteConfirm').click()
-        };
-
-    } else {
-    alert('ok');}
-    });
-    
-});
-
-
-
+  });

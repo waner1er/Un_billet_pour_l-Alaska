@@ -34,3 +34,5 @@ $("#show-sidebar").click(function() {
    
 });
 
+
+$('.dispose').button('dispose')

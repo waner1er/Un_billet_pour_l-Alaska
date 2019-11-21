@@ -415,17 +415,34 @@ font-family:Neucha;
   }
   .mobileHeader {
     display:none;
+    padding:12px;
     
   }
-  
+  .disconnectMobile{
+    display:none;
+
+  }
 
   @media screen and (max-width: 767px) {
     .chiller-theme .sidebar-wrapper {
       display:none;
    }
    .mobileHeader{
-     display:flex;
+    display: flex;
+    background: #31353D;
+    flex-direction: column;
+    align-items: center;
 
+   }
+   .mobileHeader li:nth-child(6){
+    background: #3a3f48;
+   }
+   .disconnectMobile{
+    display:block;
+
+   }
+   .disconnectMobile a{
+    color:pink;
    }
 
   }
@@ -523,4 +540,8 @@ font-family:Neucha;
 #commentsTable th,#commentsTable tr,#commentsTable td{
   border:1px solid black;
   text-align: center;
+}
+
+.flexouille{
+  justify-content: space-around;
 }

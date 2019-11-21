@@ -16,7 +16,7 @@ class MessageManager extends Manager
     {
         $db = $this->dbConnect();
         $message = $db->prepare('SELECT  post_id, user,messages, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM message WHERE post_id = ? ORDER BY comment_date DESC ');
-        $message->execute(array($postId));
+        $message->execute(array($id));
 
         return $message;
     }

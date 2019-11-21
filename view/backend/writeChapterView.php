@@ -12,7 +12,7 @@
       <h2 style="text-align: center;">Rédiger un nouvau chapitre</h2>
       <div>
         <label for="title">Titre du Chapitre</label><br />
-        <input type="text" id="author" name="title" />
+        <input type="text" id="title" name="title" />
       </div>
 
       <div>

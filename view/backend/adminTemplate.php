@@ -15,26 +15,38 @@
   <link href="https://fonts.googleapis.com/css?family=Clicker+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-    </head>
-      <body>
+  </head>
+    <body>
+     
+      
       <ul class="mobileHeader nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link alert-success" href="index.php?action=admin">Administration</a>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Rédaction</a>
-    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
-      <a class="dropdown-item" href="index.php?action=writeChapter">Rédiger un nouvel article</a>
-      <a class="dropdown-item" href="index.php?action=adminChapters">Liste des chapitres</a>
-      <a class="dropdown-item" href="index.php?action=adminComments">Liste des commentaires</a>
-    </div>
-  </li>
-  
-  <li class="nav-item">
-    <a class="nav-link" href="index.php">Retourner sur le Site</a>
-  </li>
+        <li class="nav-item">
+          <a class="nav-link " href="index.php?action=admin"><img src="public/images/jean.jpg" width="150px"alt="">
+</a>
+        </li>
 
- 
+        <li nav-item>    
+          <a class="nav-link" href="index.php?action=writeChapter">Rédiger un nouvel article</a>
+        </li>
+
+        <li nav-item>    
+          <a class="nav-link" href="index.php?action=adminChapters">Liste des chapitres</a>
+        </li>
+
+        <li nav-item>    
+          <a class="nav-link" href="index.php?action=adminComments">Liste des commentaires</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Retourner sur le Site</a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link" href="index.php?action=disconnect">
+        Se Déconnecter
+        </li>
+
+
 </ul>
 
       <div class="page-wrapper chiller-theme toggled">
@@ -46,7 +58,7 @@
       
       <div class="sidebar-header">
       <a href="index.php?action=admin">
-        <div class="user-pic">
+        <div class="">
           <img class="img-responsive img-rounded" src="public/images/jean.jpg"
             alt="User picture">
         </div>

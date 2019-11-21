@@ -21,9 +21,11 @@ function adminIndex(){
 
     require('view/backend/adminView.php');
 }
-function moderate(){
-    echo 'on modère le commentaire';
-}
+function moderate($id){
+    $commentManager = new CommentManager;
+    $comments = $commentManager->censor($id);
+
+    header('Location: index.php?action=adminComments');}
 function writeChapter(){
 	$chapterManager = new PostManager(); // Création d'un objet
     $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
