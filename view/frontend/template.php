@@ -22,7 +22,7 @@
 
     </head>
         
-    <body>
+    <body style="margin:50px;">
 
     	<!--Top-Bar-->
     	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,9 +56,8 @@
             <div class="container">
                 <div class="row text-center d-flex justify-content-center">
                     <div class="col-md-12 ">
-                        <a href="">A propos</a>  
-                        <a href="mailto:J-Forteroche@Caramail.fr">Contact</a>  
-                        <a href="MentionsLegales.php">Mentions légales</a>
+                        <a href="#">A propos</a>  
+                        <a href="index.php?action=mentionsLegales">Envoyer un mail</a>
                     </div>
                 </div>
             </div>

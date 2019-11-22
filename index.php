@@ -40,12 +40,15 @@ try{
             case 'moderate': 
                 moderateAction();
                 break;
+            case 'publish': 
+                publishAction();
+                break;
             case 'login': 
                 loginAction();
                 break;
             case 'admin': 
-                adminAction(); 
-                break;
+                chaptersAction(); 
+            break;
             case 'writeChapter': 
                 writeChapter(); 
                 break;
@@ -60,6 +63,9 @@ try{
                 break;
             case 'adminComments': 
                 adminCommentsAction(); 
+                break;
+            case 'mentionsLegales': 
+                mentionsLegalesAction(); 
                 break;
             case 'disconnect': 
                 disconnectAction(); 
@@ -150,6 +156,10 @@ function editCommentAction(){
     moderate($_GET['id']);
 
 }
+    function publishAction(){
+    publish($_GET['id']);
+
+}
 
 
 function loginAction() {
@@ -213,6 +223,9 @@ function adminCommentsAction()
     }
 }
 
+function mentionsLegalesAction() {
+    mentionsLegales();
+}
 
 function disconnectAction() {
     disconnect();

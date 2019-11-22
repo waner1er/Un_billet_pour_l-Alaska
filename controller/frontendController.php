@@ -87,6 +87,10 @@ function connect($username, $password)
         throw new Exception("La combinaison nom d'utilisateur / mot de passe n'est pas bonne.");
     }
 }
+function mentionsLegales()
+{
+require('view/frontend/MentionsLegales.php');
+}
 
 
 function signal($id)

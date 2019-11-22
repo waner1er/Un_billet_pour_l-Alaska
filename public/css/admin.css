@@ -545,3 +545,12 @@ font-family:Neucha;
 .flexouille{
   justify-content: space-around;
 }
+.commentAdmin{
+  flex-direction: column;
+  width:75%;
+  margin:auto;
+}
+
+.commentsDetails{
+  justify-content: space-around;
+}

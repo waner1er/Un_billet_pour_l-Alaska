@@ -7,9 +7,9 @@
 
   <h3 class="lead">Une épopée tragique au coeur du grand froid</h3>
 </div>
-
-<p><a href="index.php">Retour à la liste des chapitres</a></p>
-
+<div class="row">
+<button class="btn btn-success"><a href="index.php">Retour à la liste des chapitres</a></button>
+</div>
 <div id="titleChap" class="alert-light">
     <h2>
         <?=($post['title']) ?><br>
@@ -53,21 +53,19 @@
 while ($comment = $comments->fetch())
 {
 ?>
-<div class="alert alert-dismissible alert-secondary">
-<h5  class="text-info">
-      <strong >
-          <?= htmlspecialchars($comment['author']) ?>
-      </strong>
-      le <?= $comment['comment_date_fr'] ?> 
-</h5>
-<div style='display:none' class="censored"><em>Ce commentaire à été signalé par l'administration
-</em></div>
 
-<p class="comment">
-<?= $comment['comment'] ?>
-</p> 
-
-
+<?php
+if ($comment['censored']==0){
+?>    <p class="comment">
+    <?= $comment['comment'] ?>
+    </p> <?php }
+else{
+    print_r(' <div  class="censored ">
+                <iframe style="margin:auto" src="https://giphy.com/embed/23BST5FQOc8k8" width="150" height="75" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                <br> <h4>Ce commentaire à été modéré  </h4>
+            </div>');
+}
+?>
    <a class='btn btn-danger' href="index.php?action=signal&amp;id=<?=$comment['id']?>">Signaler</a></td>
 
   

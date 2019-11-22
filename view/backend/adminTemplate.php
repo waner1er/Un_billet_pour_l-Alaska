@@ -79,20 +79,22 @@
           <li class="header-menu">
             <h3>Administration</h3>
           </li>
+
           <li>
-          <ul>
-                <li>
-                  <a href="index.php?action=writeChapter">Rédiger un nouveau Chapitre
-                    <span class="badge badge-pill badge-success">+</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="index.php?action=adminChapters">Liste des Chapitres</a>
-                </li>
-                <li>
-                  <a href="index.php?action=adminComments">Liste des commentaires</a>
-                </li>
-              </ul></li>
+            <ul>
+                  <li>
+                    <a href="index.php?action=writeChapter">Rédiger un nouveau Chapitre
+                      <span class="badge badge-pill badge-success">+</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="index.php?action=adminChapters">Liste des Chapitres</a>
+                  </li>
+                  <li>
+                    <a href="index.php?action=adminComments">Liste des commentaires</a>
+                  </li>
+            </ul>
+          </li>
           
          
         
@@ -100,7 +102,7 @@
             <span><a href="index.php">Retourner sur le Site</a></span>
           </li>
           <div class="sidebar-footer">
-      
+</ul>
       <a href="index.php?action=disconnect">
       Se Déconnecter
         <i class="fa fa-power-off"></i>
@@ -114,24 +116,7 @@
   <div><?= $content ?></div>
 
 <!------------------------>
-<footer  id="footer">
-            <div class="container">
-                <div class="row text-center d-flex justify-content-center">
-                    <div class="col-md-12 ">
-                        <a href="">A propos</a>  
-                        <a href="mailto:J-Forteroche@Caramail.fr">Contact</a>  
-                        <a href="MentionsLegales.php">Mentions légales</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">
-                <span>©<script>document.write(new Date().getFullYear());</script>
 
-            Erwan RIVET - basé sur un template <a href="https://bootswatch.com/sketchy/" target="_blank">sketchy bootswatch </a>
-                </span>
-            </div>
-        </footer>
   <script src="vendor/jquery/jquery.min.js"></script>
 
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

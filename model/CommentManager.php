@@ -44,6 +44,14 @@ class CommentManager extends Manager
         $affectedLines = $censored->execute(array($id));
         return $censored;
     }
+    
+    public function activate($id)
+    {
+        $db =$this->dbConnect();
+        $activate = $db->prepare('UPDATE comments SET censored = 0 WHERE id = ?');
+        $affectedLines = $activate->execute(array($id));
+        return $activate;
+    }
 
     
 

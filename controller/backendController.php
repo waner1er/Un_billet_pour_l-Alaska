@@ -26,6 +26,13 @@ function moderate($id){
     $comments = $commentManager->censor($id);
 
     header('Location: index.php?action=adminComments');}
+
+function publish($id){
+    $commentManager = new CommentManager;
+    $comments = $commentManager->activate($id);
+
+    header('Location: index.php?action=adminComments');}
+    
 function writeChapter(){
 	$chapterManager = new PostManager(); // Création d'un objet
     $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
