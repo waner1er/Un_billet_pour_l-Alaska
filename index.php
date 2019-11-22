@@ -2,22 +2,38 @@
 session_start();
 error_reporting(E_ALL); 
 ini_set("display_errors", 1);
+
 require('controller/frontendController.php');
 require('controller/backendController.php');
 
-
+// SCRIPT ---------------------------------
 try{
     if(isset($_GET['action'])) {
         switch($_GET['action']) {
+            //FRONT
             case 'listPosts': 
                 listPostsAction(); 
                 break;
             case 'post': 
                 postAction(); 
                 break;
-            case 'message': 
-                messageAction(); 
+            case 'addComment': 
+                addCommentAction(); 
                 break;
+            case 'signal': 
+                signalAction(); 
+                break;
+            case 'login': 
+                loginAction();
+                break;
+            case 'mentionsLegales': 
+                mentionsLegalesAction(); 
+                break;
+
+
+            //BACK
+
+
             case 'addChapter': 
                 addChapterAction(); 
                 break;
@@ -27,28 +43,16 @@ try{
             case 'updateChapter': 
                 updateChapterAction(); 
                 break;
-            case 'addComment': 
-                addCommentAction(); 
-                break;
-
-            case 'editComment': 
-                editCommentAction(); 
-                break;
-            case 'signal': 
-                signalAction(); 
-                break;
             case 'moderate': 
                 moderateAction();
                 break;
             case 'publish': 
                 publishAction();
                 break;
-            case 'login': 
-                loginAction();
-                break;
             case 'admin': 
                 chaptersAction(); 
             break;
+            
             case 'writeChapter': 
                 writeChapter(); 
                 break;
@@ -64,27 +68,28 @@ try{
             case 'adminComments': 
                 adminCommentsAction(); 
                 break;
-            case 'mentionsLegales': 
-                mentionsLegalesAction(); 
-                break;
+       
             case 'disconnect': 
                 disconnectAction(); 
                 break;
         }
-    }
-    else {
+    }else {
         listPosts();
     }
-}   catch(Exception $e) {
-        require('view/frontend/errorView.php');
 
 }
+catch(Exception $e) {
+    require('view/frontend/errorView.php');
+
+}
+
+
+
+//FONCTIONS  ----------------------------------------------------
+//FRONT----------------------------------------------------------
 
 function listPostsAction() {
     listPosts();
-}
-function messageAction() {
-    message();
 }
 
 function postAction() {
@@ -98,69 +103,20 @@ function postAction() {
 
 function addCommentAction(){
     if (isset($_GET['id']) && $_GET['id'] > 0) {
-                //si les 2 champs sont remplis
                 if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                    //le controller envoie 'addcomment' 
                     addComment($_GET['id'], $_POST['author'], $_POST['comment']);
                 }
                 else {
-                    //sinon : Erreur
                     throw new Exception('Tous les champs ne sont pas remplis !');
                 }
-            }
-            else {
-                //si l'id = 0 ou et négatif on affiche l'erreur 
-                throw new Exception('Aucun identifiant de billet envoyé');
-            }
-        }
-        
-function editCommentAction(){
-    if (isset($_GET['id']) && $_GET['id'] > 0) {
-        if (!empty($_POST['comment'])) {
-            editComment($_GET['id'], $_POST['comment']);  
-           }
-        else {
-            throw new Exception('Tous les champs ne sont pas remplis !');
-        }
-    }
-    else {
+    }else {
         throw new Exception('Aucun identifiant de billet envoyé');
-    }
-}
-
-    function addChapterAction(){
-                //si les 2 champs sont remplis
-                if (!empty($_POST['title']) && !empty($_POST['content'])) {
-                    //le controller envoie 'addcomment' 
-                    addChapter($_GET['id'], $_POST['title'], $_POST['content']);
-                }
-                else {
-                    //sinon : Erreur
-                    throw new Exception('Tous les champs ne sont pas remplis !');
-                }
-         
-}
-    function postChapterAction(){
-        chapter();      
-}
-    function updateChapterAction(){
-            editChapter($_POST['id'],$_POST['content']);
-
-       // echo "modifier le contenu de 'content' dans 'posts'<br><a href='index.php'>retour</a>";
-    }
-    function signalAction(){
-        signal($_GET['id']);
-
         }
-    function moderateAction(){
-    moderate($_GET['id']);
-
 }
-    function publishAction(){
-    publish($_GET['id']);
-
+        
+function signalAction(){
+        signal($_GET['id']);
 }
-
 
 function loginAction() {
     if(isset($_POST['username']) && isset($_POST['password'])) {
@@ -171,6 +127,41 @@ function loginAction() {
     }
 }
 
+function mentionsLegalesAction() {
+    mentionsLegales();
+}
+
+
+//BACK--------------------------------------------------------------------------
+
+function addChapterAction(){
+    if (!empty($_POST['title']) && !empty($_POST['content'])) {
+        addChapter($_GET['id'], $_POST['title'], $_POST['content']);
+    }
+    else {
+        throw new Exception('Tous les champs ne sont pas remplis !');
+    }      
+}
+
+function postChapterAction(){
+    chapter();      
+}
+
+function updateChapterAction(){
+    editChapter($_POST['id'],$_POST['content']);
+
+}
+    
+function moderateAction(){
+    moderate($_GET['id']);
+
+}
+
+function publishAction(){
+    publish($_GET['id']);
+
+}
+
 function adminAction() {
     if(isset($_SESSION['username'])) {
         adminIndex();       
@@ -179,14 +170,7 @@ function adminAction() {
         login();
     }
 }
-function chaptersAction() {
-    if(isset($_SESSION['username'])) {
-        chaptersIndex();       
-    }
-    else {
-        login();
-    }
-}
+
 function writeChapterAction() {
     if(isset($_SESSION['username'])) {
         writeChapterIndex();       
@@ -195,15 +179,16 @@ function writeChapterAction() {
         login();
     }
 }
-function eraseChapterAction()
-{
+
+function chaptersAction() {
     if(isset($_SESSION['username'])) {
-        eraseChapter();       
+        chaptersIndex();       
     }
     else {
         login();
     }
 }
+
 function editChapterAction()
 {
     if(isset($_SESSION['username'])) {
@@ -213,6 +198,17 @@ function editChapterAction()
         login();
     }
 }
+
+function eraseChapterAction()
+{
+    if(isset($_SESSION['username'])) {
+        eraseChapter();       
+    }
+    else {
+        login();
+    }
+}
+
 function adminCommentsAction() 
 {
     if(isset($_SESSION['username'])) {
@@ -223,9 +219,6 @@ function adminCommentsAction()
     }
 }
 
-function mentionsLegalesAction() {
-    mentionsLegales();
-}
 
 function disconnectAction() {
     disconnect();

@@ -9,7 +9,10 @@ function admin() {
 
     require('view/backend/adminView.php');
 }
+function listPostsAdmin()
+{
 
+}
 function disconnect() {
     session_destroy();
     require ('view/frontend/loginView.php');
@@ -32,7 +35,7 @@ function publish($id){
     $comments = $commentManager->activate($id);
 
     header('Location: index.php?action=adminComments');}
-    
+
 function writeChapter(){
 	$chapterManager = new PostManager(); // Création d'un objet
     $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
@@ -64,7 +67,7 @@ function adminCommentsIndex(){
 
 function chaptersIndex(){
 	$chapterManager = new PostManager(); // Création d'un objet
-    $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
+    $chapters = $chapterManager->getPostsAdmin(); // Appel d'une fonction de cet objet
 
 
 
