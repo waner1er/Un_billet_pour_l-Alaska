@@ -18,15 +18,15 @@
 
     </head>
         
-    <body style="margin:50px;">
-
-    	<!--Top-Bar-->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <body >
+    <div class='row'>
+       	<!--Top-Bar-->
+         <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-12">
             <a class="navbar-brand" href="index.php">ACCUEIL</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-
+            
             <div class="collapse navbar-collapse" id="navbarColor03">
               <ul class="navbar-nav mr-auto">
 
@@ -38,8 +38,24 @@
               </ul>
             </div>
       </nav>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-3">Billet simple pour l'Alaska</h1>
+        <h1 class="display-3">Jean Forteroche</h1>
 
-      <div><?= $content ?></div>
+        <h3 class="lead">Une épopée tragique au coeur du grand froid</h3>
+    </div>
+    
+        <div><?= $content ?></div>
+      
+</div>     
+      </div>      
+       </div>
+      </div>
+    </div>
+      
+      
+      </div>
 
       <footer  id="footer">
         <div class="container">

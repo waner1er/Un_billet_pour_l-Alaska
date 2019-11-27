@@ -115,7 +115,7 @@ function addCommentAction(){
 }
         
 function signalAction(){
-        signal($_GET['id']);
+        signal($_GET['id'], $_GET['postId']);
 }
 
 function loginAction() {

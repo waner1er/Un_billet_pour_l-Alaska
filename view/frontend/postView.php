@@ -1,12 +1,7 @@
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
-    <div class="jumbotron">
-        <h1 class="display-3">Billet simple pour l'Alaska</h1>
-        <h1 class="display-3">Jean Forteroche</h1>
-
-        <h3 class="lead">Une épopée tragique au coeur du grand froid</h3>
-    </div>
+   
 
     <div class="row">
         <button class="btn btn-success"><a href="index.php">Retour à la liste des chapitres</a></button>
@@ -15,18 +10,20 @@
     <div id="titleChap" class="alert-light">
         <h2>
             <?=($post['title']) ?><br>
-            <em>le <?= $post['creation_date_fr'] ?></em>
+            
         </h2>
-        
+        <em>le <?= $post['creation_date_fr'] ?></em>
         <p >
             <?= nl2br($post['content']) ?>
         </p>
-    </div>
+        <a class="btn btn-warning" href="index.php?action=editChapterView&id=<?= $post['id']?>">Modifier le chapitre</a>
 
+    </div>
   
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ajouterCollapse" aria-expanded="false" aria-controls="collapseExample">
         Ajouter un commentaire
     </button>
+
 
     <div class="collapse" id="ajouterCollapse">
         <div class="alert alert-dismissible alert-secondary">
@@ -69,7 +66,7 @@
     }
     ?>
 
-    <a class='btn btn-danger' href="index.php?action=signal&amp;id=<?=$comment['id']?>">Signaler</a></td>
+    <a class='btn btn-danger' href="index.php?action=signal&amp;id=<?=$comment['id']?>&amp;postId=<?=$post['id']?>">Signaler</a></td>
 
   
     (<?= ($comment['nb_signalements']) ?>  )

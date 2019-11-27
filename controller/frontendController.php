@@ -26,6 +26,7 @@ function post($id)
 
 function addComment($id, $author, $comment)
 {
+    
     $commentManager = new CommentManager();
 
     $affectedLines = $commentManager->postComment($id, $author, $comment);
@@ -93,7 +94,7 @@ require('view/frontend/MentionsLegales.php');
 }
 
 
-function signal($id)
+function signal($id,$postId)
 {
     $commentManager = new CommentManager();
     $signal = $commentManager->postSignal($id);
@@ -101,6 +102,6 @@ function signal($id)
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location:index.php?action=listPosts');
+        header('Location:index.php?action=post&id='.$postId);
     }
 }

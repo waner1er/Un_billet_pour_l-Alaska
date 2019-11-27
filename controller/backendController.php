@@ -83,6 +83,7 @@ function chapter()
 
     require('view/backend/postChapter.php');
 }
+
 function editChapterView()
 {
     $postManager = new PostManager();
