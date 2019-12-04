@@ -37,8 +37,8 @@ function publish($id){
     header('Location: index.php?action=adminComments');}
 
 function writeChapter(){
-	$chapterManager = new PostManager(); // Création d'un objet
-    $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
+	$chapterManager = new PostManager(); 
+    $chapters = $chapterManager->getPosts(); 
 
     $commentManager = new CommentManager();
     $comments = $commentManager->getComments();
@@ -47,8 +47,8 @@ function writeChapter(){
 }
 
 function writeChapterIndex(){
-	$chapterManager = new PostManager(); // Création d'un objet
-    $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
+	$chapterManager = new PostManager(); 
+    $chapters = $chapterManager->getPosts();
 
 
     require('view/backend/editChapterView.php');
@@ -56,8 +56,8 @@ function writeChapterIndex(){
 
 function adminCommentsIndex(){
 	
-    $chapterManager = new PostManager(); // Création d'un objet
-    $chapters = $chapterManager->getPosts(); // Appel d'une fonction de cet objet
+    $chapterManager = new PostManager(); 
+    $chapters = $chapterManager->getPosts();
 
     $commentManager = new CommentManager();
     $comments = $commentManager->getComments();
@@ -66,8 +66,8 @@ function adminCommentsIndex(){
 }
 
 function chaptersIndex(){
-	$chapterManager = new PostManager(); // Création d'un objet
-    $chapters = $chapterManager->getPostsAdmin(); // Appel d'une fonction de cet objet
+	$chapterManager = new PostManager(); 
+    $chapters = $chapterManager->getPostsAdmin();
 
 
 
@@ -77,7 +77,7 @@ function chaptersIndex(){
 
 function chapter()
 {
-	$chapterManager = new PostManager(); // Création d'un objet
+	$chapterManager = new PostManager(); 
 
     $chapter = $chapterManager->getPost($_GET['id']);
 

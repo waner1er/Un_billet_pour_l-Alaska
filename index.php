@@ -11,9 +11,7 @@ try{
     if(isset($_GET['action'])) {
         switch($_GET['action']) {
             //FRONT
-            case 'listPosts': 
-                listPostsAction(); 
-                break;
+        
             case 'post': 
                 postAction(); 
                 break;

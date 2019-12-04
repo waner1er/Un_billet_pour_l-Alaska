@@ -40,21 +40,7 @@ function addComment($id, $author, $comment)
 }
 
   
-function editComment($id, $comment)
-{
-    $commentManager = new CommentManager();
-  
-    $newComment = $commentManager->updateComment($id, $comment);
-  
-    if ($newComment === false) {
-  
-        throw new Exception('Impossible de modifier le commentaire !');
-    }
-    else {
-        echo 'commentaire : ' . $_POST['comment'];
-        header('Location: index.php?action=listPosts');
-    }
-}
+
     
     function login()
 {

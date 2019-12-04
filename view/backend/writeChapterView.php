@@ -9,7 +9,7 @@
       <div class="tab-pane fade active show" id="home">
           <div class="container">
               <form action="index.php?action=addChapter" method="post">
-                  <h2 style="text-align: center;">Rédiger un nouvau chapitre</h2>
+                  <h2 style="text-align: center;">Rédiger un nouveau chapitre</h2>
 
                   <div>
                       <label for="title">Titre du Chapitre</label><br />

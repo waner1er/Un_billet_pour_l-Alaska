@@ -54,7 +54,7 @@
     ?>
 
     <?php
-    if ($comment['censored']==0){
+    if ($comment['censored'] == 0){
     ?>    <p class="comment">
         <?= $comment['comment'] ?>
         </p> <?php }
