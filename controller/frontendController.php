@@ -3,7 +3,7 @@
 // Chargement des classes
 require_once 'model/postManager.php';
 require_once 'model/commentManager.php';
-require_once 'model/loginManager.php';
+require_once 'model/userManager.php';
 
 
 function listPosts()

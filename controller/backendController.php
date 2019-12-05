@@ -1,7 +1,7 @@
 <?php
 require_once 'model/postManager.php';
 require_once 'model/commentManager.php';
-require_once 'model/loginManager.php';
+require_once 'model/userManager.php';
 
 //fonctions de base 
 function admin() {
