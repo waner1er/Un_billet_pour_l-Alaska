@@ -46,40 +46,35 @@
 
     <h2>Commentaires</h2>
 
-
-
     <?php
     while ($comment = $comments->fetch())
     {
     ?>
 
+
+
     <?php
-    if ($comment['censored'] == 0){
-    ?>    <p class="comment">
-        <?= $comment['comment'] ?>
-        </p> <?php }
+    if ($comment['censored'] == 0){ 
+    ?>    
+        <p class="comment">
+            <?= htmlspecialchars($comment['comment']) ?></p>
+        <a class="btn btn-danger signal" href="index.php?action=signal&amp;id=<?=$comment["id"]?>&amp;postId=<?=$post["id"]?>">Signaler</a>
+        (<?= ($comment['nb_signalements']) ?>   )
+
+    
+    <?php }
     else{
-        print_r(' <div  class="censored ">
+        print_r('<div  class="censored ">
                     <iframe style="margin:auto" src="https://giphy.com/embed/23BST5FQOc8k8" width="150" height="75" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
                     <br> <h4>Ce commentaire à été modéré  </h4>
                 </div>');
     }
     ?>
-
-    <a class='btn btn-danger' href="index.php?action=signal&amp;id=<?=$comment['id']?>&amp;postId=<?=$post['id']?>">Signaler</a></td>
-
   
-    (<?= ($comment['nb_signalements']) ?>  )
 
 
 
-<?php
-
-}
-$comments->closeCursor();
-
-?>
-
+<?php } $comments->closeCursor(); ?>
 
 <?php $content = ob_get_clean(); ?>
 

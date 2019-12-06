@@ -1,3 +1,5 @@
+<?php $title = 'se connecter' ?>
+
 <?php ob_start(); ?>
 
   <div  class="container">

@@ -139,7 +139,8 @@ padding:25px;
 }
 
 .comment{
-  padding: 0.75%;
+  padding: 2%;
   font-size: 1em;
   font-family: sans-serif;
+  background: lightblue;
 }

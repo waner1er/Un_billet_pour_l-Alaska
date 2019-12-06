@@ -1,10 +1,12 @@
 <?php
 session_start();
+
 error_reporting(E_ALL); 
 ini_set("display_errors", 1);
 
 require('controller/frontendController.php');
 require('controller/backendController.php');
+
 
 // SCRIPT ---------------------------------
 try{
@@ -95,7 +97,7 @@ function postAction() {
         post($_GET['id']);
     }
     else {
-        echo 'Erreur : aucun identifiant de billet envoyé';
+        throw new Exception('vous n\'avez chosi aucun chapitre');
     }
 }
 

@@ -52,7 +52,7 @@
 
 
             <td>
-                <a href="index.php?action=post&id=<?= $data["post_id"] ?>" class="btn btn-info">
+                <a href="index.php?action=post&amp;id=<?= $data["post_id"] ?>" class="btn btn-info">
                    <?= $data["title"] ?>
                 </a>  
             </td>
