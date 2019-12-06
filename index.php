@@ -13,7 +13,8 @@ try{
     if(isset($_GET['action'])) {
         switch($_GET['action']) {
             //FRONT
-        
+            case 'listPosts':
+                listPostsAction();
             case 'post': 
                 postAction(); 
                 break;
@@ -74,7 +75,7 @@ try{
                 break;
         }
     }else {
-        listPosts();
+        listPostsAction();
     }
 
 }

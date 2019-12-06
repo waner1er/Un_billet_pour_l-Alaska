@@ -18,6 +18,8 @@ function post($id)
 {
     $postManager = new PostManager();
     $commentManager = new CommentManager();
+    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+
 
     $post = $postManager->getPost($id);
     $comments = $commentManager->getCommentsByPost($id);

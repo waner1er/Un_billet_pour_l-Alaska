@@ -137,10 +137,39 @@ padding:25px;
   font-family: sans-serif;
   text-align:center;
 }
-
-.comment{
+.censored{
   padding: 2%;
   font-size: 1em;
   font-family: sans-serif;
+  background: lightgrey;
+  border:1px solid gray;
+  margin:3px 0 ; 
+
+}
+.sommaireTitle{
+  color:#000;
+  text-align: center;
+  padding: 0px 30px;
+
+}
+.sommaireTitle a:hover{
+  color:#fff;
+}
+.sommaireSide{
+  border:hidden;
+  background:transparent;
+  padding:0;
+}
+.comment{
+  padding: 2%;
+  margin:3px 0;
+  font-size: 1em;
+  font-family: sans-serif;
   background: lightblue;
+  border:1px solid gray;
+}
+@media (max-width:991px){
+  .sommaireSide{
+    display:none;
+  }
 }

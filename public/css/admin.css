@@ -577,14 +577,7 @@ justify-content: space-around;
   overflow: scroll;
 }
 
-#titleChap h2::first-letter, #chapter_main::first-letter {
-  font-family: "Cabin Sketch", cursive;
-  font-size:2.5em;
-  text-transform: uppercase;
-  padding-right:0.2em;
-  float:left;
-  color:#000;
-}
+
 
 #titleChap p {
   padding: 0 5%;
