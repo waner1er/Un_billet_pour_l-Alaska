@@ -137,7 +137,7 @@ function mentionsLegalesAction() {
 
 function addChapterAction(){
     if (!empty($_POST['title']) && !empty($_POST['content'])) {
-        addChapter($_GET['id'], $_POST['title'], $_POST['content']);
+        addChapter($_POST['title'], $_POST['content']);
     }
     else {
         throw new Exception('Tous les champs ne sont pas remplis !');
@@ -172,14 +172,14 @@ function adminAction() {
     }
 }
 
-function writeChapterAction() {
-    if(isset($_SESSION['username'])) {
-        writeChapterIndex();       
-    }
-    else {
-        login();
-    }
-}
+// function writeChapterAction() {
+//     if(isset($_SESSION['username'])) {
+//         writeChapterIndex();       
+//     }
+//     else {
+//         login();
+//     }
+// }
 
 function chaptersAction() {
     if(isset($_SESSION['username'])) {
@@ -203,7 +203,8 @@ function editChapterAction()
 function eraseChapterAction()
 {
     if(isset($_SESSION['username'])) {
-        eraseChapter();       
+        eraseChapter();
+               
     }
     else {
         login();

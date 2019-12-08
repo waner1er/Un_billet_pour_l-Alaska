@@ -55,42 +55,33 @@
         <h2>Commentaires</h2>
 
         <?php
-        while ($comment = $comments->fetch())
-        {
+        while ($comment = $comments->fetch()):
         ?>
 
 
 
-        <?php
-        if ($comment['censored'] == 0){ 
-        ?>    
+        <?php if ($comment['censored'] == 0): ?>    
             
             <div class="comment">
+                <div><?= $comment['author'] ?></div>
                 <div><?= $comment['comment'] ?></div>
             <a class="btn btn-danger signal" href="index.php?action=signal&amp;id=<?=$comment["id"]?>&amp;postId=<?=$post["id"]?>">Signaler</a>
             (<?= ($comment['nb_signalements']) ?>   )
             </div>
 
         
-        <?php
-        
-        }
-
-        else{?>
+        <?php else: ?>
             <div  class="censored ">
                         <iframe style="margin:auto" src="https://giphy.com/embed/23BST5FQOc8k8" width="150" height="75" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
                         <br> <h4>Ce commentaire à été modéré  </h4>
                     </div>
                     
-        <?php
-        }
-        ?>
+        <?php endif; ?>
     
 
 
 
-    <?php 
-    } 
+    <?php endwhile;
 
     $comments->closeCursor(); ?>
     </div>
@@ -106,15 +97,13 @@
                     <div class="card-body">
                     </div>
             <?php
-            while ($data = $posts->fetch())
-            {
+            while ($data = $posts->fetch()):
             ?> 
             <a href="index.php?action=post&amp;id=<?= $data['id']?>">
             <p class="card-title sommaireTitle"> <?= ($data['title']) ?></h4>
             </a>
 
-            <?php
-            }
+            <?php endwhile;
             
             $posts->closeCursor();
             ?>           

@@ -28,11 +28,11 @@ class PostManager extends Manager
 
         return $post;
     }
-    public function postChapter($id, $title, $content)
+    public function postChapter($title, $content)
     {
         $db = $this->dbConnect();
-        $chapter = $db->prepare('INSERT INTO posts(id, title, content, creation_date) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $chapter->execute(array($id, $title, $content));
+        $chapter = $db->prepare('INSERT INTO posts(title, content, creation_date) VALUES(:title,:content, NOW())');
+        $affectedLines = $chapter->execute([':title' => $title, ':content'=>$content]);
 
         return $affectedLines;
     }

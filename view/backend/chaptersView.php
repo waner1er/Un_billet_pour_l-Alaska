@@ -8,7 +8,7 @@
 
     <?php
     while ($data = $chapters->fetch())
-    {
+    :
     ?>
 
     <div class="chapterEdit card">
@@ -21,7 +21,7 @@
     <hr>
 
     <?php
-    }
+    endwhile;
     ?>
 
     <?php $content = ob_get_clean(); ?>

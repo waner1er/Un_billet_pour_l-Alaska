@@ -31,7 +31,7 @@ function addComment($id, $author, $comment)
     
     $commentManager = new CommentManager();
 
-    $affectedLines = $commentManager->postComment($id, $author, $comment);
+    $affectedLines = $commentManager->postComment($id, htmlspecialchars($author), htmlspecialchars($comment));
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');

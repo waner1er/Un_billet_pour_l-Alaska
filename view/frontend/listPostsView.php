@@ -4,13 +4,12 @@
   
 
 
-  <h2>Liste des chapitres</h2>
-  <p>Derniers chapitres :</p>
+
 
 
   <?php
-  while ($data = $posts->fetch())
-  {
+  while ($data = $posts->fetch()):
+  
   ?>
   <a  href="index.php?action=post&amp;id=<?= $data['id']?>">
       <div id="chapterBckgrnd">
@@ -33,7 +32,7 @@
 
 
   <?php
-  }
+  endwhile;
   $posts->closeCursor();
   ?>
 <?php $content = ob_get_clean(); ?>

@@ -6,7 +6,7 @@ class UserManager extends Manager {
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM users WHERE username = ?');
-        $req->execute(array($username));
+        $req->execute([$username]);
         $user = $req->fetch();
 
         return $user;

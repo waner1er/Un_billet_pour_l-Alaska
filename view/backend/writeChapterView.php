@@ -4,7 +4,6 @@
 <?php ob_start(); ?>
 
 
-
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane fade active show" id="home">
           <div class="container">
@@ -30,61 +29,7 @@
       </div>
     </div>
 
-    <div class="tab-pane fade" id="comments">
-        <h2>Liste des commentaires </h2>
-        <table class="table">
-            <thead>
-              <tr>
-                <th>Titre</th>
-                <th>Auteur</th>
-                <th>Commentaire</th>
-                <th>nombre de signalements</th>
-                <th>censuré</th>
-                <th></th>
-              </tr>
-            </thead>
-          <tbody>
-          <?php
-
-          while ($data = $comments->fetch())
-          {
-          ?>
-
-
-            <td>
-                <a href="index.php?action=post&amp;id=<?= $data["post_id"] ?>" class="btn btn-info">
-                   <?= $data["title"] ?>
-                </a>  
-            </td>
-
-            <td>
-                 <?= $data["author"] ?>
-            </td>
-
-            <td>
-                <?= $data["comment"] ?> 
-            </td>
-
-            <td>
-              <p  class="alert-danger"><?= $data["signaled"] ?></p>
-            </td>
-
-            <td>
-            <div class="custom-control custom-switch">
-            <input type="checkbox" name="" value="0">
-            <label >Modérer</label>
-            </div>
-
-            </td>
-
-      <?php
-      }
-      $comments->closeCursor();
-      ?>
-      </tbody>
-    </table>
-    </div>
-
+    
 
 <?php $content = ob_get_clean(); ?>
 

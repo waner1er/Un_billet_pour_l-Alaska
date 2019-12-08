@@ -37,22 +37,11 @@ function publish($id){
     header('Location: index.php?action=adminComments');}
 
 function writeChapter(){
-	$chapterManager = new PostManager(); 
-    $chapters = $chapterManager->getPosts(); 
-
-    $commentManager = new CommentManager();
-    $comments = $commentManager->getComments();
+	
 
     require('view/backend/writeChapterView.php');
 }
 
-function writeChapterIndex(){
-	$chapterManager = new PostManager(); 
-    $chapters = $chapterManager->getPosts();
-
-
-    require('view/backend/editChapterView.php');
-}
 
 function adminCommentsIndex(){
 	
@@ -92,11 +81,11 @@ function editChapterView()
     require('view/backend/editChapter.php');
 }
 
-function addChapter($id, $title, $content)
+function addChapter($title, $content)
 {
     $chapterManager = new PostManager();
 
-    $affectedLines = $chapterManager->postChapter($id, $title, $content);
+    $affectedLines = $chapterManager->postChapter($title, $content);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le chapitre !');
@@ -122,6 +111,7 @@ function editChapter($id,$content)
 function eraseChapter(){
     $chapterManager = new PostManager();
     $affectedLines = $chapterManager->deleteChapter($_GET['id']);
+    
     
     header('Location: index?action=adminChapters');
     
