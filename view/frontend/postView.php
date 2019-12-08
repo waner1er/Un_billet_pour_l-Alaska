@@ -54,9 +54,7 @@
 
         <h2>Commentaires</h2>
 
-        <?php
-        while ($comment = $comments->fetch()):
-        ?>
+        <?php while ($comment = $comments->fetch()): ?>
 
 
 
@@ -81,10 +79,7 @@
 
 
 
-    <?php endwhile;
-
-    $comments->closeCursor(); ?>
-    </div>
+    <?php endwhile;$comments->closeCursor(); ?></div>
 
 
 
@@ -96,17 +91,12 @@
                     <h2 style="text-align:center">Sommaire</h2>
                     <div class="card-body">
                     </div>
-            <?php
-            while ($data = $posts->fetch()):
-            ?> 
+            <?php while ($data = $posts->fetch()): ?> 
             <a href="index.php?action=post&amp;id=<?= $data['id']?>">
             <p class="card-title sommaireTitle"> <?= ($data['title']) ?></h4>
             </a>
 
-            <?php endwhile;
-            
-            $posts->closeCursor();
-            ?>           
+            <?php endwhile; $posts->closeCursor(); ?>           
                 </div>
             </div>
         </nav>

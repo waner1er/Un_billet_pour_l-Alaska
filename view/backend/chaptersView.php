@@ -6,10 +6,7 @@
         <div class="col-sm-12"><h2 style="text-align:center;">Liste des chapitres </h2></div>
     </div>
 
-    <?php
-    while ($data = $chapters->fetch())
-    :
-    ?>
+    <?php while ($data = $chapters->fetch()): ?>
 
     <div class="chapterEdit card">
         <div class="card-header"><h2><?=  $data['title']  ?></h2><?= $data['creation_date_fr'] ?></div>
@@ -20,9 +17,7 @@
 
     <hr>
 
-    <?php
-    endwhile;
-    ?>
+    <?php endwhile; ?>
 
     <?php $content = ob_get_clean(); ?>
     

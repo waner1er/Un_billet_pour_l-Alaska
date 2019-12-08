@@ -7,10 +7,7 @@
 
 
 
-  <?php
-  while ($data = $posts->fetch()):
-  
-  ?>
+  <?php while ($data = $posts->fetch()): ?>
   <a  href="index.php?action=post&amp;id=<?= $data['id']?>">
       <div id="chapterBckgrnd">
         <div id="chapter_main" class="alert-light">
@@ -31,10 +28,8 @@
       
 
 
-  <?php
-  endwhile;
-  $posts->closeCursor();
-  ?>
+  <?php endwhile;$posts->closeCursor(); ?>
+  
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
